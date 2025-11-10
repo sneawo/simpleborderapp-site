@@ -19,6 +19,8 @@
 
     <!-- Smart App Banner (iOS Safari) -->
     <meta name="apple-itunes-app" content="app-id=6451375021">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <style>
         :root {
@@ -230,6 +232,22 @@
 
         .features {
             margin: 26px 0;
+        }
+
+        .features .card::before {
+            display: none;
+        }
+
+        .features .card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .features .feature-icon {
+            color: var(--accent);
+            font-size: 18px;
+            line-height: 1;
         }
 
         .features ul {
@@ -472,33 +490,38 @@
         <section id="features" class="features">
             <div class="grid">
                 <div class="card">
-                    <h3>No-crop framing</h3>
+                    <h3><i class="fa-solid fa-crop feature-icon" aria-hidden="true"></i><span>No-crop framing</span>
+                    </h3>
                     <p>Choose aspect ratios like square, 4:5, 3:4, 9:16, and more. Borders are added as pixels, so the
                         original
                         image stays sharp.</p>
                 </div>
                 <div class="card">
-                    <h3>Quality preserved</h3>
+                    <h3><i class="fa-solid fa-star feature-icon" aria-hidden="true"></i><span>Quality preserved</span>
+                    </h3>
                     <p>Simple Border keeps resolution by adding borders around your photo/video — perfect for
                         photographers and
                         printing.</p>
                 </div>
                 <div class="card">
-                    <h3>Fast workflow</h3>
+                    <h3><i class="fa-solid fa-bolt feature-icon" aria-hidden="true"></i><span>Fast workflow</span></h3>
                     <p>Native photo picker, share sheet support, auto‑saved settings, and an album for quick access in
                         Photos.</p>
                 </div>
                 <div class="card">
-                    <h3>Custom colors</h3>
+                    <h3><i class="fa-solid fa-palette feature-icon" aria-hidden="true"></i><span>Custom colors</span>
+                    </h3>
                     <p>Match borders to your image or brand with a native color picker.</p>
                 </div>
                 <div class="card">
-                    <h3>Batch export (Premium)</h3>
+                    <h3><i class="fa-solid fa-layer-group feature-icon" aria-hidden="true"></i><span>Batch export
+                            (Premium)</span></h3>
                     <p>Share up to 10 images or videos at once with Premium, including a one-time lifetime license
                         option.</p>
                 </div>
                 <div class="card">
-                    <h3>Privacy‑friendly</h3>
+                    <h3><i class="fa-solid fa-shield-halved feature-icon"
+                            aria-hidden="true"></i><span>Privacy‑friendly</span></h3>
                     <p>No account needed. Your edits stay on device.</p>
                 </div>
             </div>
