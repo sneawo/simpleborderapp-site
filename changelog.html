@@ -141,6 +141,42 @@
             margin: 4px 0;
         }
 
+        .changelog-video {
+            border-radius: 14px;
+            background: #000;
+        }
+
+        .container.with-media {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .container.with-media .changelog-video {
+            grid-column: 1;
+            grid-row: auto;
+            justify-self: center;
+            margin-top: 8px;
+        }
+
+        @media (min-width: 720px) {
+            .container.with-media {
+                grid-template-columns: minmax(0, 1fr) auto;
+                align-items: start;
+            }
+
+            .container.with-media> :not(.changelog-video) {
+                grid-column: 1;
+            }
+
+            .container.with-media .changelog-video {
+                grid-column: 2;
+                grid-row: 1 / span 10;
+                align-self: start;
+                margin-left: 16px;
+                margin-top: 0;
+                justify-self: end;
+            }
+        }
+
         .metadata {
             display: flex;
             align-items: center;
@@ -219,7 +255,7 @@
         <ul class="changelog" aria-label="Changelog">
             <li class="entry">
                 <article class="detail">
-                    <div class="container">
+                    <div class="container with-media">
                         <div class="versionline"><time datetime="2025-11-11">11.11.2025</time> • <span
                                 class="app">Simple Border</span> <span class="version">5.3.0</span></div>
                         <p>This version brings bug fixes and improvements:</p>
@@ -229,6 +265,8 @@
                             <li>Added a Save button next to the Share button for faster saving.</li>
                         </ul>
                         <p>You can manage button visibility anytime in Settings.</p>
+                        <video class="changelog-video" src="i/changelog/v5.3.0.mp4" autoplay loop muted playsinline
+                            preload="metadata" aria-label="Simple Border 5.3.0 in action"></video>
                     </div>
                 </article>
             </li>
