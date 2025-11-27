@@ -47,6 +47,40 @@
             text-decoration: none;
         }
 
+        .promo-bar {
+            background: linear-gradient(90deg, rgba(126, 231, 135, 0.12), rgba(11, 11, 12, 0.75));
+            border-bottom: 1px solid var(--border);
+        }
+
+        .promo-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px 24px;
+            font-size: 14px;
+            letter-spacing: .1px;
+            text-align: center;
+        }
+
+        .promo-kicker {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .promo-copy {
+            color: var(--muted);
+        }
+
+        @media (max-width: 540px) {
+            .promo-inner {
+                flex-direction: column;
+                gap: 6px;
+            }
+        }
+
         .wrap {
             max-width: 900px;
             margin: 0 auto;
@@ -238,6 +272,12 @@
 </head>
 
 <body>
+    <div class="promo-bar">
+        <div class="promo-inner">
+            <span class="promo-kicker">Black Friday is live ✨</span>
+            <span class="promo-copy">The annual plan is 50% off until December 2.</span>
+        </div>
+    </div>
     <div class="wrap">
         <header>
             <div class="brand">
