@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to Add Borders to Photos on iPhone (Without Cropping) – Simple Border</title>
+    <meta name="description"
+        content="Step-by-step guide to add borders to photos on iPhone without cropping using the Simple Border app for clean, consistent borders.">
+    <link rel="icon" href="i/favicon.png" sizes="32x32" type="image/png">
+    <link rel="canonical" href="https://simpleborder.app/how-to-add-borders-to-photos-on-iphone.html">
+    <meta property="og:title" content="How to Add Borders to Photos on iPhone (Without Cropping)">
+    <meta property="og:description"
+        content="Learn how to add clean borders to photos on iPhone using the Simple Border app—no cropping required.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://simpleborder.app/how-to-add-borders-to-photos-on-iphone.html">
+    <meta property="og:image" content="https://simpleborder.app/i/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <style>
+        :root {
+            --bg: #0b0b0c;
+            --fg: #f5f5f7;
+            --muted: #b7b7bd;
+            --accent: #7ee787;
+            --card: #151517;
+            --border: #26262a;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+            color: var(--fg);
+            background: radial-gradient(1000px 600px at 80% -10%, #1b1b1f 10%, #0b0b0c 60%);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--fg);
+            text-decoration: none;
+        }
+
+        .promo-bar {
+            background: linear-gradient(90deg, rgba(126, 231, 135, 0.12), rgba(11, 11, 12, 0.75));
+            border-bottom: 1px solid var(--border);
+        }
+
+        .promo-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px 24px;
+            font-size: 14px;
+            letter-spacing: .1px;
+            text-align: center;
+        }
+
+        .promo-kicker {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .promo-copy {
+            color: var(--muted);
+        }
+
+        @media (max-width: 540px) {
+            .promo-inner {
+                flex-direction: column;
+                gap: 6px;
+            }
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 12px 0 8px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: #000;
+            position: relative;
+            display: grid;
+            place-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .35), inset 0 0 0 1px #333;
+        }
+
+        .logo::after {
+            content: "";
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            background: #fff;
+            display: block;
+        }
+
+        .brand h1 {
+            font-size: 18px;
+            margin: 0;
+            letter-spacing: .2px;
+            font-weight: 700;
+        }
+
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #111;
+            border: 1px solid var(--border);
+            padding: 10px 14px;
+            border-radius: 14px;
+        }
+
+        .cta strong {
+            font-weight: 700;
+        }
+
+        .page-title {
+            margin: 28px 0 8px;
+            font-size: clamp(24px, 5vw, 40px);
+            letter-spacing: -.4px;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 20px;
+            font-size: 16px;
+        }
+
+        .intro {
+            margin-bottom: 28px;
+        }
+
+        .intro p {
+            margin: 0 0 12px;
+            color: var(--muted);
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 18px;
+            border-radius: 14px;
+            background: var(--accent);
+            color: #041a08;
+            border: none;
+            font-weight: 700;
+            box-shadow: 0 14px 34px rgba(126, 231, 135, 0.28), 0 0 0 1px rgba(126, 231, 135, 0.35);
+            transition: transform .15s ease, box-shadow .15s ease;
+            font-size: 15px;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 38px rgba(126, 231, 135, 0.35), 0 0 0 1px rgba(126, 231, 135, 0.45);
+        }
+
+        .button:focus-visible {
+            outline: 2px solid #f5f5f7;
+            outline-offset: 3px;
+        }
+
+        .section {
+            margin: 30px 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 18px 18px 20px;
+        }
+
+        .section h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+
+        .section h3 {
+            margin: 18px 0 8px;
+            font-size: 17px;
+        }
+
+        .section p {
+            margin: 0 0 10px;
+            color: var(--fg);
+        }
+
+        .section ul,
+        .section ol {
+            margin: 0 0 10px 20px;
+            padding: 0;
+            color: var(--fg);
+        }
+
+        .section li {
+            margin: 4px 0;
+        }
+
+        .section small {
+            color: var(--muted);
+        }
+
+        .faq {
+            margin-top: 24px;
+        }
+
+        .faq-item+.faq-item {
+            margin-top: 14px;
+        }
+
+        .faq-item h3 {
+            margin: 0 0 4px;
+            font-size: 16px;
+        }
+
+        .faq-item p {
+            margin: 0;
+        }
+
+        footer {
+            color: var(--muted);
+            font-size: 14px;
+            margin: 40px 0 16px;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 640px) {
+            .wrap {
+                padding: 20px;
+            }
+        }
+    </style>
+    <script defer src="https://cloud.umami.is/script.js"
+        data-website-id="73f82c83-e126-42bf-9759-c0b78d84a706"></script>
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to add borders to photos on iPhone without cropping",
+    "description": "Step-by-step instructions for adding clean borders to photos on iPhone using the Simple Border app.",
+    "image": "https://simpleborder.app/i/screenshots/1.jpeg",
+    "totalTime": "PT2M",
+    "tool": [
+      { "@type": "Thing", "name": "iPhone" },
+      { "@type": "SoftwareApplication", "name": "Simple Border - No Crop" }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Install Simple Border",
+        "text": "Download Simple Border from the App Store on your iPhone and open the app."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Choose your photo",
+        "text": "Tap the Choose Media button to pick a photo from your library, or share a photo from the Photos app into Simple Border via the Share Sheet."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Pick an aspect ratio",
+        "text": "Select the aspect ratio you want, such as square, 4:5, or original, so the app can frame your image correctly."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Adjust border width and color",
+        "text": "Use the border slider to choose how thick you want the border and pick a color that matches your photo or brand."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Export your bordered photo",
+        "text": "Tap Share or Save to export your image back to Photos or post directly to Instagram and other apps."
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+    <div class="promo-bar">
+        <div class="promo-inner">
+            <span class="promo-kicker">Black Friday is live ✨</span>
+            <span class="promo-copy">The annual plan is 50% off until December 2.</span>
+        </div>
+    </div>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <a href="index.html" aria-label="Go home"><img src="i/icon.png" alt="" class="logo"></a>
+                <h1><a href="index.html">Simple Border</a></h1>
+            </div>
+            <a class="cta" href="https://apps.apple.com/app/id6451375021" target="_blank" rel="noopener"
+                data-umami-event="app-store-download" data-umami-event-location="howto-header">
+                <strong>Download on the App Store</strong> →
+            </a>
+        </header>
+
+        <main>
+            <h1 class="page-title">How to add borders to photos on iPhone</h1>
+            <p class="subtitle">The fastest no-crop workflow to add clean borders on iPhone using Simple Border.</p>
+
+            <section class="intro">
+                <p>Borders can make your photos stand out on Instagram, keep your full composition without cropping, and
+                    add a print-like frame around your images.</p>
+                <p>
+                    <a class="button" href="https://apps.apple.com/app/id6451375021" target="_blank" rel="noopener"
+                        data-umami-event="app-store-download" data-umami-event-location="howto-hero">
+                        Get Simple Border for iPhone
+                    </a>
+                </p>
+            </section>
+
+            <section class="section" aria-labelledby="method-simple-border">
+                <h2 id="method-simple-border">Add borders with Simple Border</h2>
+                <p>Simple Border is designed specifically for adding clean, no-crop borders to photos and videos on
+                    iPhone and iPad. It adds borders as extra pixels around your image, so you keep full resolution –
+                    ideal for Instagram, portfolios, and printing.</p>
+
+                <h3>Steps</h3>
+                <ol>
+                    <li><strong>Install Simple Border</strong><br>Download <a
+                            href="https://apps.apple.com/app/id6451375021" target="_blank" rel="noopener">Simple
+                            Border</a> from the App Store and open the app.</li>
+                    <li><strong>Choose your photo</strong><br>Tap the <strong>Choose Media</strong> button to pick a
+                        photo from your library, or share a photo from the Photos app into Simple Border via the Share
+                        Sheet.</li>
+                    <li><strong>Select an aspect ratio</strong><br>Choose the format you need – for example, square
+                        (1:1),
+                        vertical 4:5 for Instagram feed, or <em>Original</em> to keep your existing aspect ratio.</li>
+                    <li><strong>Adjust border width and color</strong><br>Drag the border slider until the frame looks
+                        right. Use the color picker to choose white, black, or any custom color that matches your
+                        image or brand.
+                        <div style="margin: 12px 0; text-align: center;">
+                            <img src="i/how-to/step3-4.jpeg" alt="Selecting an aspect ratio in Simple Border"
+                                width="100%" style="max-width: 320px; border-radius: 12px; display: inline-block;">
+                        </div>
+                    </li>
+                    <li><strong>Export your bordered photo</strong><br>Tap <em>Share</em> or <em>Save</em> to export
+                        your
+                        image back to Photos, or share directly to Instagram, Messages, and other apps.</li>
+                </ol>
+
+                <h3>Why this method is best for most people</h3>
+                <ul>
+                    <li><strong>No cropping</strong> – your full photo stays visible.</li>
+                    <li><strong>Sharp results</strong> – borders are added as pixels, so you keep resolution.</li>
+                    <li><strong>Consistent formats</strong> – quickly switch between square, 4:5, 3:4, 9:16, and more.
+                    </li>
+                    <li><strong>Fast workflow</strong> – reuse your last settings, batch export (with Premium), and use
+                        the Share Extension from Photos.</li>
+                </ul>
+                <p><small>Tip: If you often post in the same format, enable only your favorite aspect ratios in Simple
+                        Border settings to make choosing even faster.</small></p>
+            </section>
+
+            <section class="section" aria-labelledby="tips-borders">
+                <h2 id="tips-borders">Tips for better-looking borders on iPhone</h2>
+                <ul>
+                    <li><strong>Keep thickness consistent.</strong> Use the same border width across a series so your
+                        feed looks intentional.</li>
+                    <li><strong>Match your subject.</strong> White borders feel classic; black or dark borders can work
+                        better for night or moody images; color borders are great for brand consistency.</li>
+                    <li><strong>Use the right aspect ratio.</strong> For Instagram feed, vertical 4:5 usually gets more
+                        screen space than square; Stories and Reels are 9:16.</li>
+                    <li><strong>Watch image quality.</strong> Avoid apps that overly compress your photo; check the
+                        result at full size before posting.</li>
+                </ul>
+                <p><small>Simple Border is built to keep resolution high and add borders as pixels, which makes it
+                        especially good for photographers, marketing assets, and printing.</small></p>
+            </section>
+        </main>
+
+        <footer>
+            <div>© <span id="year"></span> Simple Border · All rights reserved.</div>
+            <div>
+                <a href="index.html">Home</a> ·
+                <a href="changelog.html">Changelog</a> ·
+                <a href="mailto:support+simpleborder@sneawo.com">Support</a> ·
+                <a href="https://sneawo.com/privacy-policy.html" target="_blank" rel="noopener">Privacy</a> ·
+                <a href="https://sneawo.com/terms.html" target="_blank" rel="noopener">Terms</a>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
