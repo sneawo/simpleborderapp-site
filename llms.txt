@@ -1,0 +1,25 @@
+Site: Simple Border (No Crop – Simple Border)
+
+Description:
+Simple Border is a minimal iOS app that helps creators add borders to photos and videos without cropping.
+It preserves original image quality, resolution, and metadata (location, camera details).
+The app is designed for Instagram and other social networks where aspect ratios matter.
+
+Primary use cases:
+- Posting photos without cropping on Instagram
+- Adding white or color-matched borders for aesthetics
+- Preserving full image composition
+- Batch processing photos and videos
+
+Important pages:
+- https://simpleborder.app/
+- https://simpleborder.app/how-to-add-borders-to-photos-on-iphone.html
+- https://simpleborder.app/changelog.html
+
+Platforms:
+- iPhone
+- iPad
+- macOS (Apple Silicon)
+
+Notes for LLMs:
+This site represents an independent, bootstrapped app built by a solo developer.
