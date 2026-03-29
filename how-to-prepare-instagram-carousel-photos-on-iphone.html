@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to Prepare Instagram Carousel Photos on iPhone (Same Size, No Cropping) – Simple Border</title>
+    <meta name="description"
+        content="Prepare Instagram carousel photos on iPhone with the same size and clean borders without cropping. Use one consistent ratio across multiple photos.">
+    <link rel="icon" href="i/favicon.png" sizes="32x32" type="image/png">
+    <link rel="canonical" href="https://simpleborder.app/how-to-prepare-instagram-carousel-photos-on-iphone.html">
+    <meta property="og:title" content="How to Prepare Instagram Carousel Photos on iPhone">
+    <meta property="og:description"
+        content="Make Instagram carousel photos the same size on iPhone without cropping by using one clean border style across multiple images.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://simpleborder.app/how-to-prepare-instagram-carousel-photos-on-iphone.html">
+    <meta property="og:image" content="https://simpleborder.app/i/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <style>
+        :root {
+            --bg: #0b0b0c;
+            --fg: #f5f5f7;
+            --muted: #b7b7bd;
+            --accent: #7ee787;
+            --card: #151517;
+            --border: #26262a;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+            color: var(--fg);
+            background: radial-gradient(1000px 600px at 80% -10%, #1b1b1f 10%, #0b0b0c 60%);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--fg);
+            text-decoration: none;
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 12px 0 8px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: #000;
+            position: relative;
+            display: grid;
+            place-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .35), inset 0 0 0 1px #333;
+        }
+
+        .logo::after {
+            content: "";
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            background: #fff;
+            display: block;
+        }
+
+        .brand-title {
+            font-size: 18px;
+            margin: 0;
+            letter-spacing: .2px;
+            font-weight: 700;
+        }
+
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #111;
+            border: 1px solid var(--border);
+            padding: 10px 14px;
+            border-radius: 14px;
+        }
+
+        .cta strong {
+            font-weight: 700;
+        }
+
+        .page-title {
+            margin: 28px 0 8px;
+            font-size: clamp(24px, 5vw, 40px);
+            letter-spacing: -.4px;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 20px;
+            font-size: 16px;
+        }
+
+        .intro {
+            margin-bottom: 28px;
+        }
+
+        .intro p {
+            margin: 0 0 12px;
+            color: var(--muted);
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 18px;
+            border-radius: 14px;
+            background: var(--accent);
+            color: #041a08;
+            border: none;
+            font-weight: 700;
+            box-shadow: 0 14px 34px rgba(126, 231, 135, 0.28), 0 0 0 1px rgba(126, 231, 135, 0.35);
+            transition: transform .15s ease, box-shadow .15s ease;
+            font-size: 15px;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 38px rgba(126, 231, 135, 0.35), 0 0 0 1px rgba(126, 231, 135, 0.45);
+        }
+
+        .button:focus-visible {
+            outline: 2px solid #f5f5f7;
+            outline-offset: 3px;
+        }
+
+        .section {
+            margin: 30px 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 18px 18px 20px;
+        }
+
+        .section h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+
+        .section h3 {
+            margin: 18px 0 8px;
+            font-size: 17px;
+        }
+
+        .section p {
+            margin: 0 0 10px;
+            color: var(--fg);
+        }
+
+        .section ul,
+        .section ol {
+            margin: 0 0 10px 20px;
+            padding: 0;
+            color: var(--fg);
+        }
+
+        .section li {
+            margin: 4px 0;
+        }
+
+        .section small {
+            color: var(--muted);
+        }
+
+        .example-grid {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: 1fr;
+        }
+
+        .example-card {
+            margin: 0;
+        }
+
+        .example-card img {
+            width: 100%;
+            display: block;
+            border: 1px solid var(--border);
+            background: #111;
+        }
+
+        .example-card figcaption {
+            color: var(--muted);
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .step-image {
+            margin: 14px 0 4px;
+            text-align: center;
+        }
+
+        .step-image img {
+            width: 100%;
+            max-width: 320px;
+            display: inline-block;
+            border: 1px solid var(--border);
+            background: #111;
+        }
+
+        .related-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 18px;
+            margin-top: 10px;
+        }
+
+        footer {
+            color: var(--muted);
+            font-size: 14px;
+            margin: 40px 0 16px;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 640px) {
+            .wrap {
+                padding: 20px;
+            }
+        }
+    </style>
+    <script defer src="https://cloud.umami.is/script.js"
+        data-website-id="73f82c83-e126-42bf-9759-c0b78d84a706"></script>
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to prepare Instagram carousel photos on iPhone with the same size",
+    "description": "Step-by-step instructions for making Instagram carousel photos the same size on iPhone without cropping using Simple Border.",
+    "image": "https://simpleborder.app/i/how-to/carousel-after-4-to-5.jpg",
+    "totalTime": "PT3M",
+    "tool": [
+      { "@type": "HowToTool", "name": "iPhone" },
+      { "@type": "HowToTool", "name": "Simple Border - No Crop" }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Pick your carousel photos",
+        "text": "Choose the photos you want to post together and decide whether you want a square or 4:5 Instagram carousel."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Open them in Simple Border",
+        "text": "Select multiple photos in Simple Border so you can prepare the whole carousel with one consistent setup."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Apply one aspect ratio and border style",
+        "text": "Choose one aspect ratio, then use the same border thickness and color across the full set."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Export the full set",
+        "text": "Export all prepared images and upload them to Instagram in the order you want."
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <a href="/" aria-label="Go home"><img src="i/icon.png" alt="Simple Border app icon" class="logo"></a>
+                <div class="brand-title"><a href="/">Simple Border</a></div>
+            </div>
+            <a class="cta" href="https://apps.apple.com/app/id6451375021" target="_blank" rel="noopener"
+                data-umami-event="app-store-download" data-umami-event-location="carousel-header">
+                <strong>Download on the App Store</strong> →
+            </a>
+        </header>
+
+        <main>
+            <h1 class="page-title">How to prepare Instagram carousel photos on iPhone</h1>
+            <p class="subtitle">Make every image the same size, keep the full composition, and post a cleaner carousel
+                without cropping.</p>
+
+            <section class="intro">
+                <p>Instagram carousel posts work best when every slide feels aligned. The problem is that photos often
+                    start with different shapes, which can make the set feel uneven or force awkward crops.</p>
+                <p>Simple Border solves that by adding space around each image instead of cutting anything off. You can
+                    choose one ratio, use one border style, and export a consistent set for Instagram.</p>
+                <p>
+                    <a class="button" href="https://apps.apple.com/app/id6451375021" target="_blank" rel="noopener"
+                        data-umami-event="app-store-download" data-umami-event-location="carousel-hero">
+                        Get Simple Border for iPhone
+                    </a>
+                </p>
+            </section>
+
+            <section class="section" aria-labelledby="carousel-examples">
+                <h2 id="carousel-examples">Before and after carousel examples</h2>
+                <div class="example-grid">
+                    <figure class="example-card">
+                        <img src="i/how-to/carousel-before.jpg"
+                            alt="Three iPhone photos with different sizes before preparing an Instagram carousel"
+                            loading="lazy">
+                        <figcaption>Before: mixed sizes make the carousel feel uneven.</figcaption>
+                    </figure>
+                    <figure class="example-card">
+                        <img src="i/how-to/carousel-after-4-to-5.jpg"
+                            alt="Instagram carousel photos prepared to the same 4 by 5 size with Simple Border on iPhone"
+                            loading="lazy">
+                        <figcaption>After in 4:5: one ratio and one border style across the full set.</figcaption>
+                    </figure>
+                    <figure class="example-card">
+                        <img src="i/how-to/carousel-after-square.jpg"
+                            alt="Instagram carousel photos prepared to the same square size with Simple Border on iPhone"
+                            loading="lazy">
+                        <figcaption>After in square: a cleaner option for classic grid posts.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="method-carousel">
+                <h2 id="method-carousel">Batch-prepare a carousel with one consistent layout</h2>
+                <p>For an Instagram carousel, consistency matters more than any single image. Simple Border lets you
+                    prepare multiple photos with the same aspect ratio and border treatment, which is useful for
+                    portfolio posts, product shots, travel recaps, and before-and-after sets.</p>
+
+                <h3>Steps</h3>
+                <ol>
+                    <li><strong>Pick the photos for your carousel</strong><br>Choose the images you want to post
+                        together and decide whether the final carousel should be <strong>square (1:1)</strong> or
+                        <strong>vertical 4:5</strong>.
+                    </li>
+                    <li><strong>Open them in Simple Border</strong><br>Select multiple photos so you can work through
+                        the set with one visual direction instead of editing each image from scratch.</li>
+                    <li><strong>Choose one aspect ratio for the whole set</strong><br>Use the same format across every
+                        image so Instagram shows the carousel cleanly from slide to slide.
+                        <div class="step-image">
+                            <img src="i/how-to/step3-4.jpeg"
+                                alt="Choosing an aspect ratio and border settings in Simple Border on iPhone"
+                                loading="lazy">
+                        </div>
+                    </li>
+                    <li><strong>Set one border style</strong><br>Use the same border thickness and color on each photo.
+                        White feels editorial, black feels stronger, and custom colors can match a brand or campaign.
+                    </li>
+                    <li><strong>Export the full set</strong><br>Save the results, review the sequence, and upload them
+                        to Instagram in order.</li>
+                </ol>
+
+                <h3>Why this works well for carousels</h3>
+                <ul>
+                    <li><strong>Consistent framing</strong> keeps the post looking intentional.</li>
+                    <li><strong>No cropping</strong> means wide, tall, and mixed-orientation photos can live in the same
+                        carousel.</li>
+                    <li><strong>Batch export</strong> saves time when you are preparing a full set instead of one image.
+                    </li>
+                    <li><strong>Cleaner presentation</strong> makes portfolio, brand, and storytelling posts feel more
+                        polished.</li>
+                </ul>
+            </section>
+
+            <section class="section" aria-labelledby="tips-carousel">
+                <h2 id="tips-carousel">Best settings for Instagram carousel photos</h2>
+                <ul>
+                    <li><strong>Use 4:5 if you want more screen space.</strong> It usually looks larger in the Instagram
+                        feed than square.</li>
+                    <li><strong>Use square for a classic grid look.</strong> It is easier to balance very mixed image
+                        sets.</li>
+                    <li><strong>Keep border thickness uniform.</strong> This is one of the fastest ways to make the
+                        carousel feel cohesive.</li>
+                    <li><strong>Review the first slide carefully.</strong> The first image often sets the visible size
+                        for the rest of the carousel.</li>
+                    <li><strong>Think in sets, not single images.</strong> A carousel usually looks stronger when every
+                        slide follows the same visual system.</li>
+                </ul>
+                <p><small>Simple Border is especially useful when your carousel includes portrait, landscape, and square
+                        photos that still need to feel like one post.</small></p>
+            </section>
+
+        </main>
+
+        <footer>
+            <div>© <span id="year"></span> Simple Border · All rights reserved.</div>
+            <div>
+                <a href="/">Home</a> ·
+                <a href="how-to-add-borders-to-photos-on-iphone.html">How to add borders on iPhone</a> ·
+                <a href="changelog.html">Changelog</a> ·
+                <a href="mailto:support+simpleborder@sneawo.com">Support</a> ·
+                <a href="https://sneawo.com/privacy-policy.html" target="_blank" rel="noopener">Privacy</a> ·
+                <a href="https://sneawo.com/terms.html" target="_blank" rel="noopener">Terms</a>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
