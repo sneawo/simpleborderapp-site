@@ -48,6 +48,40 @@
             text-decoration: none;
         }
 
+        .promo-bar {
+            background: linear-gradient(90deg, rgba(126, 231, 135, 0.12), rgba(11, 11, 12, 0.75));
+            border-bottom: 1px solid var(--border);
+        }
+
+        .promo-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px 24px;
+            font-size: 14px;
+            letter-spacing: .1px;
+            text-align: center;
+        }
+
+        .promo-kicker {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .promo-copy {
+            color: var(--muted);
+        }
+
+        @media (max-width: 540px) {
+            .promo-inner {
+                flex-direction: column;
+                gap: 6px;
+            }
+        }
+
         .wrap {
             max-width: 900px;
             margin: 0 auto;
@@ -145,6 +179,7 @@
         .changelog-video {
             border-radius: 14px;
             background: #000;
+            width: 300px;
         }
 
         .container.with-media {
@@ -239,6 +274,12 @@
 </head>
 
 <body>
+    <div class="promo-bar">
+        <div class="promo-inner">
+            <span class="promo-kicker">New in 7.0.0</span>
+            <span class="promo-copy">New color panel with smart suggested colors — find the perfect border color faster.</span>
+        </div>
+    </div>
     <div class="wrap">
         <header>
             <div class="brand">
@@ -255,6 +296,23 @@
         <p class="subtitle">Updates and improvements to Simple Border - No Crop.</p>
 
         <ul class="changelog" aria-label="Changelog">
+            <li class="entry">
+                <article class="detail">
+                    <div class="container with-media">
+                        <div class="versionline"><time datetime="2026-04-02">02.04.2026</time> • <span
+                                class="app">Simple Border</span> <span class="version">7.0.0</span></div>
+                        <p>This version introduces a new color panel:</p>
+                        <ul>
+                            <li>Smart suggested colors based on your image.</li>
+                            <li>Improved custom color controls.</li>
+                            <li>Pick a different border color for each image in a batch.</li>
+                        </ul>
+                        <video class="changelog-video" src="i/changelog/v7.0.0.mp4" autoplay loop muted playsinline
+                            preload="metadata" aria-label="Simple Border 7.0.0 in action"></video>
+                    </div>
+                </article>
+            </li>
+
             <li class="entry">
                 <article class="detail">
                     <div class="container">
