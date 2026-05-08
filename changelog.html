@@ -93,6 +93,7 @@
             align-items: center;
             justify-content: space-between;
             gap: 16px;
+            flex-wrap: wrap;
             padding: 12px 0 8px;
         }
 
@@ -123,10 +124,45 @@
         }
 
         .brand-title {
-            font-size: 18px;
+            font-size: 22px;
             margin: 0;
             letter-spacing: .2px;
             font-weight: 700;
+        }
+
+        .store-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .header-store {
+            justify-content: flex-end;
+        }
+
+        .store-badge {
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            transition: transform .15s ease, opacity .15s ease;
+        }
+
+        .store-badge:hover {
+            transform: translateY(-2px);
+            opacity: .92;
+        }
+
+        .store-badge:focus-visible {
+            outline: 2px solid #f5f5f7;
+            outline-offset: 3px;
+            border-radius: 8px;
+        }
+
+        .store-badge img {
+            display: block;
+            width: auto;
+            height: 40px;
         }
 
         .page-title {
@@ -139,6 +175,36 @@
             color: var(--muted);
             margin: 0 0 20px;
             font-size: 16px;
+        }
+
+        .platform-switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin: 0 0 8px;
+            padding: 4px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #111;
+        }
+
+        .platform-switch a {
+            border-radius: 8px;
+            color: var(--muted);
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1;
+            padding: 9px 12px;
+        }
+
+        .platform-switch a[aria-current="page"] {
+            background: var(--accent);
+            color: #041a08;
+        }
+
+        .platform-switch a:focus-visible {
+            outline: 2px solid #f5f5f7;
+            outline-offset: 2px;
         }
 
         .changelog {
@@ -276,8 +342,8 @@
 <body>
     <div class="promo-bar">
         <div class="promo-inner">
-            <span class="promo-kicker">New in 7.0.0</span>
-            <span class="promo-copy">New color panel with smart suggested colors — find the perfect border color faster.</span>
+            <span class="promo-kicker">Now on Android</span>
+            <span class="promo-copy">Simple Border is available on Google Play.</span>
         </div>
     </div>
     <div class="wrap">
@@ -286,16 +352,38 @@
                 <a href="/" aria-label="Go home"><img src="i/icon.png" alt="Simple Border app icon" class="logo"></a>
                 <div class="brand-title"><a href="/">Simple Border</a></div>
             </div>
-            <a class="cta" href="https://apps.apple.com/app/id6451375021" target="_blank" rel="noopener"
-                data-umami-event="app-store-download" data-umami-event-location="changelog-header">
-                <strong>Download on the App Store</strong> →
-            </a>
+            <nav class="store-links header-store" aria-label="Download Simple Border">
+                <a class="store-badge" href="https://apps.apple.com/app/id6451375021" target="_blank" rel="noopener"
+                    data-umami-event="app-store-download" data-umami-event-location="changelog-header">
+                    <img src="i/store-badges/app-store.svg" alt="Download on the App Store">
+                </a>
+                <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sneawo.simpleborder"
+                    target="_blank" rel="noopener" data-umami-event="google-play-download"
+                    data-umami-event-location="changelog-header">
+                    <img src="i/store-badges/google-play.svg" alt="Get it on Google Play">
+                </a>
+            </nav>
         </header>
 
         <h2 class="page-title">What's New</h2>
-        <p class="subtitle">Updates and improvements to Simple Border - No Crop.</p>
+        <p class="subtitle">Updates for Simple Border on the App Store.</p>
+        <nav class="platform-switch" aria-label="Changelog platform">
+            <a href="changelog.html" aria-current="page">iOS</a>
+            <a href="changelog-android.html">Android</a>
+        </nav>
 
         <ul class="changelog" aria-label="Changelog">
+            <li class="entry">
+                <article class="detail">
+                    <div class="container">
+                        <div class="versionline"><time datetime="2026-04-27">27.04.2026</time> • <span
+                                class="app">Simple Border</span> <span class="version">7.2.0</span></div>
+                        <p>This version changes the subscription page — you can now switch your plan or cancel more
+                            easily.</p>
+                    </div>
+                </article>
+            </li>
+
             <li class="entry">
                 <article class="detail">
                     <div class="container">

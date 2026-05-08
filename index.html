@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Simple Border – No Crop Photo & Video Borders</title>
     <meta name="description"
-        content="Add clean borders to photos & videos without cropping on iPhone, iPad, or macOS. Perfect for Instagram posts, 4:5 portraits, square photos, and more.">
+        content="Add clean borders to photos & videos without cropping on iPhone, iPad, macOS, or Android. Perfect for Instagram posts, 4:5 portraits, square photos, and more.">
     <link rel="icon" href="i/favicon.png" sizes="32x32" type="image/png">
     <link rel="canonical" href="https://simpleborder.app/">
     <meta property="og:title" content="Simple Border – No Crop Photo & Video Borders">
@@ -99,6 +99,7 @@
             align-items: center;
             justify-content: space-between;
             gap: 16px;
+            flex-wrap: wrap;
             padding: 12px 0 8px;
         }
 
@@ -129,23 +130,9 @@
         }
 
         .brand-title {
-            font-size: 18px;
+            font-size: 22px;
             margin: 0;
             letter-spacing: .2px;
-            font-weight: 700;
-        }
-
-        .cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: #111;
-            border: 1px solid var(--border);
-            padding: 10px 14px;
-            border-radius: 14px;
-        }
-
-        .cta strong {
             font-weight: 700;
         }
 
@@ -174,32 +161,50 @@
             display: flex;
             gap: 12px;
             flex-wrap: wrap;
-            margin-top: 18px;
+            margin-top: 14px;
         }
 
-        .button {
+        .store-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .header-store {
+            justify-content: flex-end;
+        }
+
+        .store-badge {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 14px 20px;
-            border-radius: 14px;
-            background: var(--accent);
-            color: #041a08;
-            border: none;
-            font-weight: 700;
-            box-shadow: 0 14px 34px rgba(126, 231, 135, 0.28), 0 0 0 1px rgba(126, 231, 135, 0.35);
-            transition: transform .15s ease, box-shadow .15s ease;
+            line-height: 0;
+            transition: transform .15s ease, opacity .15s ease;
         }
 
-        .button:hover {
+        .store-badge:hover {
             transform: translateY(-2px);
-            box-shadow: 0 18px 38px rgba(126, 231, 135, 0.35), 0 0 0 1px rgba(126, 231, 135, 0.45);
+            opacity: .92;
         }
 
-        .button:focus-visible {
+        .store-badge:focus-visible {
             outline: 2px solid #f5f5f7;
             outline-offset: 3px;
+            border-radius: 8px;
+        }
+
+        .store-badge img {
+            display: block;
+            width: auto;
+            height: 40px;
+        }
+
+        .hero-store .store-badge img {
+            height: 54px;
+        }
+
+        .hero-store {
+            margin-top: 24px;
         }
 
         .grid {
@@ -462,11 +467,11 @@
         }
 
         .pill {
-            padding: 4px 10px;
+            padding: 6px 12px;
             border: 1px solid var(--border);
             border-radius: 999px;
             background: #101014;
-            font-size: 12px;
+            font-size: 14px;
             color: var(--muted);
         }
 
@@ -481,6 +486,11 @@
         }
 
         @media (max-width: 640px) {
+            .hero-store,
+            .badges {
+                justify-content: center;
+            }
+
             .features .grid {
                 grid-template-columns: 1fr;
             }
@@ -505,7 +515,7 @@
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "Simple Border - No Crop",
-        "operatingSystem": "iOS",
+        "operatingSystem": "iOS, iPadOS, macOS",
         "applicationCategory": "Photo & Video",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "aggregateRating": {
@@ -569,9 +579,8 @@
 <body>
     <div class="promo-bar">
         <div class="promo-inner">
-            <span class="promo-kicker">New in 7.0.0</span>
-            <span class="promo-copy">New color panel with smart suggested colors — find the perfect border color
-                faster.</span>
+            <span class="promo-kicker">Now on Android</span>
+            <span class="promo-copy">Simple Border is available on Google Play.</span>
         </div>
     </div>
     <div class="wrap">
@@ -580,24 +589,26 @@
                 <img src="i/icon.png" alt="Simple Border app icon" class="logo">
                 <div class="brand-title">Simple Border</div>
             </div>
-            <a class="cta" href="https://apps.apple.com/app/id6451375021" target="_blank" rel="noopener"
-                data-umami-event="app-store-download" data-umami-event-location="header">
-                <strong>Download on the App Store</strong> →
-            </a>
         </header>
 
         <section class="hero">
             <div>
-                <h1>Add borders to photos & videos on iPhone without cropping.</h1>
+                <h1>Add borders to photos & videos on iPhone and Android without cropping.</h1>
                 <p>Frame your images for Instagram (square, 4:5) and beyond without losing quality. Fast,
                     minimal, and privacy‑friendly.</p>
-                <div class="badges">
-                    <span class="pill">Rated 4.7★ on the App Store</span>
+                <div class="store-links hero-store">
+                    <a class="store-badge" href="https://apps.apple.com/app/id6451375021" target="_blank"
+                        rel="noopener" data-umami-event="app-store-download" data-umami-event-location="hero">
+                        <img src="i/store-badges/app-store.svg" alt="Download on the App Store">
+                    </a>
+                    <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sneawo.simpleborder"
+                        target="_blank" rel="noopener" data-umami-event="google-play-download"
+                        data-umami-event-location="hero">
+                        <img src="i/store-badges/google-play.svg" alt="Get it on Google Play">
+                    </a>
                 </div>
                 <div class="badges">
-                    <a class="button" href="https://apps.apple.com/app/id6451375021" target="_blank" rel="noopener"
-                        data-umami-event="app-store-download" data-umami-event-location="hero">Get
-                        Simple Border</a>
+                    <span class="pill">Rated 4.7★ on the App Store</span>
                 </div>
             </div>
             <div class="grid hero-gallery single">
