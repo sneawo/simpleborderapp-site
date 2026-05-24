@@ -23,8 +23,10 @@ Then open http://localhost:8000. Changes to `main` deploy automatically via GitH
 - **Assets live under `i/`** (`screenshots/`, `examples/`, `changelog/`, `how-to/`, plus `favicon.png`, `icon.png`, `og-image.png`, `demo.mp4`). Reference them with root-relative paths like `i/screenshots/1.jpeg`.
 - **SEO surface** — `sitemap.xml`, `robots.txt`, `llms.txt`, and per-page `<meta>` / Open Graph / canonical tags. When adding or renaming a page, update `sitemap.xml` (including `lastmod`) and add any cross-links from the footers of existing pages. **Exception:** platform variants of the same content (e.g. `changelog.html` ↔ `changelog-android.html`) are linked to each other via the in-page **platform switcher** at the top of each variant — they should NOT also be cross-linked from the shared footer nav of unrelated pages.
 - **Smart App Banner** is wired via `<meta name="apple-itunes-app" content="app-id=6451375021">` on `index.html`; keep the App Store id in sync if it ever changes.
+- **Umami analytics** uses the direct `https://cloud.umami.is/script.js` snippet on each page. Do not add local-host guards to the static HTML; for local preview sessions, disable tracking in the browser console with `localStorage.setItem("umami.disabled", 1)`.
 
 ## Conventions
 
 - Keep the tone and visual style consistent with `index.html` — the dark theme, the green accent, and the existing section structure are the reference.
 - Don't introduce a build step, framework, or package manager for small additions; prefer inline CSS/JS to match the rest of the site.
+- Use clint for commit messages.

@@ -384,6 +384,45 @@
             text-decoration: underline;
         }
 
+        .guides {
+            margin: 44px 0;
+        }
+
+        .guides h3 {
+            margin: 0 0 20px;
+            font-size: 20px;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .guide-card {
+            display: block;
+            border: 1px solid var(--border);
+            background: #101014;
+            border-radius: 8px;
+            padding: 18px;
+            transition: border-color .15s ease, transform .15s ease;
+        }
+
+        .guide-card:hover {
+            border-color: rgba(126, 231, 135, .7);
+            transform: translateY(-2px);
+        }
+
+        .guide-card h4 {
+            margin: 0 0 8px;
+            font-size: 18px;
+        }
+
+        .guide-card p {
+            color: var(--muted);
+            margin: 0;
+        }
+
         /* horizontal scroll gallery */
         .shots-wrap {
             position: relative;
@@ -482,6 +521,10 @@
 
             .reviews-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .guide-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -668,6 +711,22 @@
                 <div class="shot square">
                     <img src="i/examples/2.jpeg" alt="Simple Border export framed at 1 by 1" loading="lazy">
                 </div>
+            </div>
+        </section>
+
+        <section class="guides" aria-labelledby="guides-title">
+            <h3 id="guides-title">Guides</h3>
+            <div class="guide-grid">
+                <a class="guide-card" href="how-to-add-borders-to-photos-on-iphone.html">
+                    <h4>How to add borders to photos on iPhone</h4>
+                    <p>A quick no-crop workflow for adding clean white, black, or custom borders while keeping full
+                        image resolution.</p>
+                </a>
+                <a class="guide-card" href="how-to-prepare-instagram-carousel-photos-on-iphone.html">
+                    <h4>How to prepare Instagram carousel photos on iPhone</h4>
+                    <p>Make mixed photo sizes fit one square or 4:5 carousel layout without cropping important parts of
+                        each image.</p>
+                </a>
             </div>
         </section>
 
