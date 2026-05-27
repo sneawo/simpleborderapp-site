@@ -50,8 +50,16 @@
         }
 
         .promo-bar {
+            display: block;
+            text-decoration: none;
+            cursor: pointer;
             background: linear-gradient(90deg, rgba(126, 231, 135, 0.12), rgba(11, 11, 12, 0.75));
             border-bottom: 1px solid var(--border);
+            transition: background .2s ease;
+        }
+
+        .promo-bar:hover {
+            background: linear-gradient(90deg, rgba(126, 231, 135, 0.2), rgba(11, 11, 12, 0.7));
         }
 
         .promo-inner {
@@ -318,12 +326,12 @@
 </head>
 
 <body>
-    <div class="promo-bar">
+    <a class="promo-bar" href="changelog.html">
         <div class="promo-inner">
-            <span class="promo-kicker">Now on Android</span>
-            <span class="promo-copy">Simple Border is available on Google Play.</span>
+            <span class="promo-kicker">New in 8.0.0</span>
+            <span class="promo-copy">Soft blurred border — fill the frame around your photo with a soft blur, no crop.</span>
         </div>
-    </div>
+    </a>
     <div class="wrap">
         <header>
             <div class="brand">
