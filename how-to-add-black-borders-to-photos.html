@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to Add a Black Border to a Photo – Simple Border</title>
+    <meta name="description"
+        content="Add a black border, black bars, or a black frame to a photo without cropping. Follow these steps in Simple Border on iPhone or Android.">
+    <link rel="icon" href="i/favicon.png" sizes="32x32" type="image/png">
+    <link rel="canonical" href="https://simpleborder.app/how-to-add-black-borders-to-photos.html">
+    <meta property="og:title" content="How to Add a Black Border or Black Bars to a Photo">
+    <meta property="og:description"
+        content="Create clean black borders around photos without cropping or reducing the original resolution.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://simpleborder.app/how-to-add-black-borders-to-photos.html">
+    <meta property="og:image" content="https://simpleborder.app/i/how-to/black-bars-example.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <style>
+        :root {
+            --bg: #0b0b0c;
+            --fg: #f5f5f7;
+            --muted: #b7b7bd;
+            --accent: #7ee787;
+            --card: #151517;
+            --border: #26262a;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+            color: var(--fg);
+            background: radial-gradient(1000px 600px at 80% -10%, #1b1b1f 10%, #0b0b0c 60%);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--fg);
+            text-decoration: none;
+        }
+
+        .promo-bar {
+            display: block;
+            background: linear-gradient(90deg, rgba(126, 231, 135, .12), rgba(11, 11, 12, .75));
+            border-bottom: 1px solid var(--border);
+        }
+
+        .promo-bar:hover {
+            background: linear-gradient(90deg, rgba(126, 231, 135, .2), rgba(11, 11, 12, .7));
+        }
+
+        .promo-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px 24px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .promo-kicker {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .promo-copy,
+        .subtitle,
+        .intro p {
+            color: var(--muted);
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            padding: 12px 0 8px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: #000;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .35), inset 0 0 0 1px #333;
+        }
+
+        .brand-title {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .store-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .store-badge {
+            display: inline-flex;
+            line-height: 0;
+            transition: transform .15s ease, opacity .15s ease;
+        }
+
+        .store-badge:hover {
+            transform: translateY(-2px);
+            opacity: .92;
+        }
+
+        .store-badge:focus-visible {
+            outline: 2px solid var(--fg);
+            outline-offset: 3px;
+            border-radius: 8px;
+        }
+
+        .store-badge img {
+            width: auto;
+            height: 40px;
+        }
+
+        .intro-store {
+            margin-top: 18px;
+        }
+
+        .intro-store .store-badge img {
+            height: 44px;
+        }
+
+        .page-title {
+            margin: 28px 0 8px;
+            font-size: clamp(30px, 6vw, 48px);
+            line-height: 1.12;
+            letter-spacing: -.5px;
+        }
+
+        .subtitle {
+            margin: 0 0 22px;
+            font-size: 17px;
+        }
+
+        .intro {
+            margin-bottom: 28px;
+        }
+
+        .intro p {
+            margin: 0 0 12px;
+            font-size: 17px;
+        }
+
+        .quick-answer {
+            padding: 18px;
+            border-left: 3px solid var(--accent);
+            border-radius: 0 12px 12px 0;
+            background: rgba(126, 231, 135, .07);
+            color: var(--fg);
+        }
+
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+        }
+
+        .section h2 {
+            margin: 0 0 10px;
+            font-size: 22px;
+        }
+
+        .section h3 {
+            margin: 20px 0 8px;
+            font-size: 18px;
+        }
+
+        .section p {
+            margin: 0 0 12px;
+        }
+
+        .section ol,
+        .section ul {
+            margin: 0 0 12px 20px;
+            padding: 0;
+        }
+
+        .section li {
+            margin: 8px 0;
+        }
+
+        .section a {
+            color: var(--accent);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .guide-image {
+            display: block;
+            width: min(100%, 340px);
+            max-height: 620px;
+            margin: 18px auto;
+            object-fit: cover;
+            object-position: top;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .comparison-card {
+            padding: 16px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #101014;
+        }
+
+        .comparison-card h3 {
+            margin-top: 0;
+        }
+
+        .comparison-card img {
+            display: block;
+            width: 100%;
+            margin-top: 14px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+
+        .faq-item+.faq-item {
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border);
+        }
+
+        .faq-item h3,
+        .faq-item p {
+            margin: 0 0 6px;
+        }
+
+        .bottom-cta {
+            text-align: center;
+        }
+
+        .bottom-cta .store-links {
+            justify-content: center;
+            margin-top: 16px;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin: 40px 0 16px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 640px) {
+            .promo-inner {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .wrap {
+                padding: 20px;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <script defer src="https://cloud.umami.is/script.js"
+        data-website-id="73f82c83-e126-42bf-9759-c0b78d84a706"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to add a black border or black bars to a photo",
+      "description": "Step-by-step instructions for adding a black border, black frame, or black bars to a photo without cropping.",
+      "image": "https://simpleborder.app/i/how-to/black-border-color-picker.jpg",
+      "totalTime": "PT2M",
+      "tool": [
+        { "@type": "HowToTool", "name": "iPhone or Android phone" },
+        { "@type": "HowToTool", "name": "Simple Border - No Crop" }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Open a photo",
+          "text": "Open Simple Border and choose the photo you want to frame."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Choose an aspect ratio",
+          "text": "Select Original for a frame on every side, or choose square, 4:5, or 9:16 to create black bars that fit a specific format."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Select black",
+          "text": "Open the color picker and select black as the border color."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Adjust the border",
+          "text": "Increase the frame size for a border on every side. Set the frame size to 0 when you only want black bars in the unused space created by the selected aspect ratio."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Export the photo",
+          "text": "Save or share the completed image. Simple Border adds the border as pixels without cropping the original composition."
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I add a black border to a photo on iPhone or Android?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Open the photo in Simple Border, choose an aspect ratio, select black in the color picker, adjust the border width, and export the image."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I add black bars without cropping the photo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Choose the output aspect ratio you need, set the border color to black, and set the frame size to 0. Simple Border fills only the unused space with black bars instead of enlarging or cropping the photo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does adding a black frame reduce image quality?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Simple Border adds pixels around the original image and preserves its resolution inside the new framed canvas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I add black borders to videos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The same border color, aspect ratio, and export workflow works with supported videos."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <a class="promo-bar" href="changelog.html">
+        <div class="promo-inner">
+            <span class="promo-kicker">New in 8.3.0</span>
+            <span class="promo-copy">More settings — export, watermark and app theme.</span>
+        </div>
+    </a>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <a href="/" aria-label="Go home"><img src="i/icon.png" alt="Simple Border app icon"
+                        class="logo"></a>
+                <div class="brand-title"><a href="/">Simple Border</a></div>
+            </div>
+            <nav class="store-links" aria-label="Download Simple Border">
+                <a class="store-badge" href="https://apps.apple.com/app/id6451375021" target="_blank" rel="noopener"
+                    data-umami-event="app-store-download" data-umami-event-location="black-border-guide-header">
+                    <img src="i/store-badges/app-store.svg" alt="Download on the App Store">
+                </a>
+                <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sneawo.simpleborder"
+                    target="_blank" rel="noopener" data-umami-event="google-play-download"
+                    data-umami-event-location="black-border-guide-header">
+                    <img src="i/store-badges/google-play.svg" alt="Get it on Google Play">
+                </a>
+            </nav>
+        </header>
+
+        <main>
+            <h1 class="page-title">How to add a black border or black bars to a photo</h1>
+            <p class="subtitle">Create a clean black frame without cropping the image or reducing its original
+                resolution.</p>
+
+            <section class="intro" aria-labelledby="quick-answer-title">
+                <h2 id="quick-answer-title" class="quick-answer">Quick answer: choose your photo in Simple Border,
+                    select an aspect ratio, and pick black. Increase the frame size for a border, or set it to 0 for
+                    black bars.</h2>
+                <p>A black border can create a gallery-style frame, separate a light photo from the background, or
+                    make a landscape or portrait image fit a social-media format with black bars instead of cropping.
+                </p>
+                <div class="store-links intro-store" aria-label="Get Simple Border">
+                    <a class="store-badge" href="https://apps.apple.com/app/id6451375021" target="_blank"
+                        rel="noopener" data-umami-event="app-store-download"
+                        data-umami-event-location="black-border-guide-intro">
+                        <img src="i/store-badges/app-store.svg" alt="Download on the App Store">
+                    </a>
+                    <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sneawo.simpleborder"
+                        target="_blank" rel="noopener" data-umami-event="google-play-download"
+                        data-umami-event-location="black-border-guide-intro">
+                        <img src="i/store-badges/google-play.svg" alt="Get it on Google Play">
+                    </a>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="black-border-steps">
+                <h2 id="black-border-steps">Add a black border with Simple Border</h2>
+                <ol>
+                    <li><strong>Open a photo.</strong> Start Simple Border and choose the photo or video you want to
+                        frame.</li>
+                    <li><strong>Choose an aspect ratio.</strong> Use Original for a frame around every side, or select
+                        square, 4:5, or 9:16 when the photo needs to fit a specific format.</li>
+                    <li><strong>Select black.</strong> Open the color picker and choose black for the solid border.</li>
+                    <li><strong>Set the frame size.</strong> Increase it for a black border on every side. Set it to
+                        <strong>0</strong> when you only want black bars in the unused space created by the selected
+                        aspect ratio.</li>
+                    <li><strong>Export.</strong> Save the finished image or share it directly. The app adds the border
+                        as pixels instead of cutting into the original photo.</li>
+                </ol>
+                <img class="guide-image" src="i/how-to/black-border-color-picker.jpg"
+                    alt="Selecting black in Simple Border while previewing black bars around a landscape photo"
+                    loading="lazy">
+            </section>
+
+            <section class="section" aria-labelledby="border-vs-bars">
+                <h2 id="border-vs-bars">Black border vs. black bars</h2>
+                <div class="comparison-grid">
+                    <article class="comparison-card">
+                        <h3>Black border or frame</h3>
+                        <p>Add space around all four sides when you want a consistent, print-like frame. Choose the
+                            Original ratio and increase the border width.</p>
+                        <img src="i/how-to/black-frame-example.jpg"
+                            alt="Landscape photo with a uniform black frame around all four sides" loading="lazy">
+                    </article>
+                    <article class="comparison-card">
+                        <h3>Black bars</h3>
+                        <p>Add space mainly above and below or at the sides when the original photo does not match the
+                            chosen output ratio. Set the frame size to <strong>0</strong> so only the unused space becomes
+                            black bars. The full photo stays visible.</p>
+                        <img src="i/how-to/black-bars-example.jpg"
+                            alt="Landscape photo fitted into a square with black bars above and below" loading="lazy">
+                    </article>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="aspect-ratio">
+                <h2 id="aspect-ratio">Choose the right format</h2>
+                <ul>
+                    <li><strong>Original:</strong> adds a uniform black frame without changing the photo's shape.</li>
+                    <li><strong>Square (1:1):</strong> useful for square social posts and consistent carousel dimensions.</li>
+                    <li><strong>Portrait (4:5):</strong> fills more vertical space in the Instagram feed.</li>
+                    <li><strong>Vertical (9:16):</strong> prepares landscape or square media for Stories, Reels, and
+                        other full-screen placements.</li>
+                </ul>
+                <p>For black bars, choose the target ratio and set the frame size to <strong>0</strong>. Simple Border
+                    fills the unused canvas with black instead of zooming into the image, so important details stay in
+                    the frame.</p>
+            </section>
+
+            <section class="section" aria-labelledby="other-styles">
+                <h2 id="other-styles">Suggested colors and blurred borders</h2>
+                <p>Black is not the only option. The color picker can suggest colors that already appear in your photo,
+                    which helps the border feel connected to the image. You can also switch from a solid color to a soft
+                    blurred border when you want the empty space to feel like an extension of the photo.</p>
+                <p>For a consistent gallery or portfolio, use the same solid black border across a set. For Stories or
+                    videos, blur can feel more immersive while still avoiding a crop.</p>
+            </section>
+
+            <section class="section" aria-labelledby="black-border-faq">
+                <h2 id="black-border-faq">Frequently asked questions</h2>
+                <div class="faq-item">
+                    <h3>How do I add a black border to a photo on iPhone or Android?</h3>
+                    <p>Open the photo in Simple Border, choose an aspect ratio, select black in the color picker, adjust
+                        the border width, and export the image.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do I add black bars without cropping the photo?</h3>
+                    <p>Choose the output aspect ratio you need, set the border color to black, and set the frame size to
+                        0. Simple Border fills only the unused space with black bars instead of enlarging or cropping
+                        the photo.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Does adding a black frame reduce image quality?</h3>
+                    <p>No. Simple Border adds pixels around the original image and preserves its resolution inside the
+                        new framed canvas.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I add black borders to videos?</h3>
+                    <p>Yes. The same border color, aspect ratio, and export workflow works with supported videos.</p>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="related-guides">
+                <h2 id="related-guides">Related guides</h2>
+                <p>For a general iPhone workflow, read <a
+                        href="how-to-add-borders-to-photos-on-iphone.html">how to add borders to photos on iPhone</a>.
+                    If you are preparing a post, compare sizes in the <a
+                        href="how-to-format-images-for-instagram-without-cropping.html">Instagram format guide</a> or
+                    prepare multiple images with the <a
+                        href="how-to-prepare-instagram-carousel-photos-on-iphone.html">carousel guide</a>.</p>
+            </section>
+
+            <section class="section bottom-cta" aria-labelledby="try-simple-border">
+                <h2 id="try-simple-border">Add a black border without cropping</h2>
+                <p>Download Simple Border, choose black, and export a clean framed photo in a few taps.</p>
+                <div class="store-links" aria-label="Download Simple Border">
+                    <a class="store-badge" href="https://apps.apple.com/app/id6451375021" target="_blank"
+                        rel="noopener" data-umami-event="app-store-download"
+                        data-umami-event-location="black-border-guide-bottom">
+                        <img src="i/store-badges/app-store.svg" alt="Download on the App Store">
+                    </a>
+                    <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sneawo.simpleborder"
+                        target="_blank" rel="noopener" data-umami-event="google-play-download"
+                        data-umami-event-location="black-border-guide-bottom">
+                        <img src="i/store-badges/google-play.svg" alt="Get it on Google Play">
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div>&copy; <span id="year"></span> Simple Border &middot; All rights reserved.</div>
+            <div>
+                <a href="/">Home</a> &middot;
+                <a href="how-to-add-borders-to-photos-on-iphone.html">iPhone border guide</a> &middot;
+                <a href="how-to-format-images-for-instagram-without-cropping.html">Instagram format guide</a> &middot;
+                <a href="changelog.html">Changelog</a> &middot;
+                <a href="mailto:support+simpleborder@sneawo.com">Support</a> &middot;
+                <a href="https://sneawo.com/privacy-policy.html" target="_blank" rel="noopener">Privacy</a> &middot;
+                <a href="https://sneawo.com/terms.html" target="_blank" rel="noopener">Terms</a>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Simple Border – No Crop Photo & Video Borders</title>
+    <title>Photo Border App for iPhone & Android – Simple Border</title>
     <meta name="description"
-        content="Add clean borders to photos & videos without cropping on iPhone, iPad, macOS, or Android. Perfect for Instagram posts, 4:5 portraits, square photos, and more.">
+        content="Add black, white, or custom borders and black bars to photos and videos without cropping. Simple Border works on iPhone, iPad, Mac, and Android.">
     <link rel="icon" href="i/favicon.png" sizes="32x32" type="image/png">
     <link rel="canonical" href="https://simpleborder.app/">
-    <meta property="og:title" content="Simple Border – No Crop Photo & Video Borders">
+    <meta property="og:title" content="Photo Border App for iPhone & Android – Simple Border">
     <meta property="og:description"
-        content="Add clean borders to photos & videos without cropping. Square, 4:5, and many other ratios.">
+        content="Add black, white, or custom borders and black bars to photos and videos without cropping on iPhone and Android.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://simpleborder.app/">
     <meta property="og:image" content="https://simpleborder.app/i/og-image.png">
@@ -335,6 +335,94 @@
             color: var(--muted);
         }
 
+        .black-border-section {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(240px, .85fr);
+            gap: 32px;
+            align-items: center;
+            margin: 48px 0;
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: linear-gradient(135deg, #151517, #101014);
+        }
+
+        .black-border-section h2 {
+            margin: 0 0 12px;
+            font-size: clamp(24px, 4vw, 36px);
+            line-height: 1.2;
+        }
+
+        .black-border-section p {
+            margin: 0 0 14px;
+            color: var(--muted);
+        }
+
+        .black-border-guide-link {
+            display: inline-block;
+            margin-top: 4px;
+            color: var(--accent);
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .black-border-visual {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .black-border-visual figure {
+            margin: 0;
+        }
+
+        .black-border-visual img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: contain;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, .35);
+        }
+
+        .black-border-visual figcaption {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .faq-section {
+            margin: 48px 0;
+        }
+
+        .faq-section h2 {
+            margin: 0 0 20px;
+            font-size: 24px;
+        }
+
+        .faq-section details {
+            border-top: 1px solid var(--border);
+            padding: 16px 0;
+        }
+
+        .faq-section details:last-child {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-section summary {
+            cursor: pointer;
+            color: var(--fg);
+            font-weight: 700;
+        }
+
+        .faq-section details p {
+            margin: 10px 0 0;
+            color: var(--muted);
+        }
+
         .reviews {
             margin: 42px 0;
         }
@@ -403,7 +491,7 @@
 
         .guide-grid {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 16px;
         }
 
@@ -527,6 +615,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .black-border-section {
+                grid-template-columns: 1fr;
+            }
+
             .reviews-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
@@ -566,7 +658,7 @@
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "Simple Border - No Crop",
-        "operatingSystem": "iOS, iPadOS, macOS",
+        "operatingSystem": "iOS, iPadOS, macOS, Android",
         "applicationCategory": "Photo & Video",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "aggregateRating": {
@@ -582,6 +674,14 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
+        {
+        "@type": "Question",
+        "name": "How do I add a black border or black bars to a photo?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Choose a photo in Simple Border, select an aspect ratio, and set the border color to black. Increase the frame size for a border on every side, or set the frame size to 0 when you only want black bars in the unused space."
+        }
+        },
         {
         "@type": "Question",
         "name": "How do I add borders to photos on iPhone?",
@@ -734,6 +834,33 @@
             </div>
         </section>
 
+        <section class="black-border-section" aria-labelledby="black-border-title">
+            <div>
+                <h2 id="black-border-title">Add a black border or black bars to any photo</h2>
+                <p>Simple Border adds black space around your photo instead of covering or cropping it. Choose square,
+                    4:5, 9:16, or another aspect ratio and set the border color to black. Increase the frame size for a
+                    border on every side, or set the frame size to <strong>0</strong> when you only want black bars
+                    above and below a landscape photo or at the sides of a portrait photo.</p>
+                <p>Borders are added as pixels, so the complete composition and original resolution stay intact.
+                    Prefer another look? Use one of the suggested colors from your photo or replace the solid border
+                    with a soft blur.</p>
+                <a class="black-border-guide-link" href="how-to-add-black-borders-to-photos.html">See how to add a
+                    black border step by step →</a>
+            </div>
+            <div class="black-border-visual">
+                <figure>
+                    <img src="i/how-to/black-frame-example.jpg"
+                        alt="Landscape photo with a uniform black frame around all four sides" loading="lazy">
+                    <figcaption>Black frame</figcaption>
+                </figure>
+                <figure>
+                    <img src="i/how-to/black-bars-example.jpg"
+                        alt="Landscape photo fitted into a square with black bars above and below" loading="lazy">
+                    <figcaption>Black bars · frame size 0</figcaption>
+                </figure>
+            </div>
+        </section>
+
         <section class="guides" aria-labelledby="guides-title">
             <h3 id="guides-title">Guides</h3>
             <div class="guide-grid">
@@ -751,6 +878,11 @@
                     <h4>How to prepare Instagram carousel photos on iPhone</h4>
                     <p>Make mixed photo sizes fit one square or 4:5 carousel layout without cropping important parts of
                         each image.</p>
+                </a>
+                <a class="guide-card" href="how-to-add-black-borders-to-photos.html">
+                    <h4>How to add a black border or black bars to a photo</h4>
+                    <p>Create a clean black frame without cropping, keep the original resolution, and export for any
+                        social format.</p>
                 </a>
             </div>
         </section>
@@ -817,12 +949,47 @@
             </div>
         </section>
 
+        <section class="faq-section" aria-labelledby="faq-title">
+            <h2 id="faq-title">Frequently asked questions</h2>
+            <details>
+                <summary>How do I add a black border or black bars to a photo?</summary>
+                <p>Choose a photo in Simple Border, select an aspect ratio, and set the border color to black. Increase
+                    the frame size for a border on every side, or set the frame size to 0 when you only want black bars
+                    in the unused space.</p>
+            </details>
+            <details>
+                <summary>How do I add borders to photos on iPhone?</summary>
+                <p>Install Simple Border, choose a photo, select an aspect ratio, adjust the border size and color, and
+                    export the full-size image without cropping.</p>
+            </details>
+            <details>
+                <summary>Can I add borders to videos?</summary>
+                <p>Yes, Simple Border supports videos. You can add borders to portrait or landscape videos and export
+                    them ready for Instagram Reels or TikTok.</p>
+            </details>
+            <details>
+                <summary>Does the app reduce image quality?</summary>
+                <p>No, Simple Border preserves the original resolution for both photos and videos.</p>
+            </details>
+            <details>
+                <summary>Is Simple Border free?</summary>
+                <p>The app is free to download with optional premium features available via subscription or lifetime
+                    purchase.</p>
+            </details>
+            <details>
+                <summary>Why use borders instead of cropping?</summary>
+                <p>Borders allow you to show your full image or video composition without cutting anything off, making
+                    posts cleaner and more consistent on Instagram or TikTok.</p>
+            </details>
+        </section>
+
         <footer>
             <div>© <span id="year"></span> Simple Border · All rights reserved.</div>
             <div>
                 <a href="changelog.html">Changelog</a> ·
                 <a href="how-to-format-images-for-instagram-without-cropping.html">Instagram format guide</a> ·
                 <a href="how-to-add-borders-to-photos-on-iphone.html">How to add borders on iPhone</a> ·
+                <a href="how-to-add-black-borders-to-photos.html">Black border guide</a> ·
                 <a href="how-to-prepare-instagram-carousel-photos-on-iphone.html">Instagram carousel guide</a> ·
                 <a href="mailto:support+simpleborder@sneawo.com">Support</a> ·
                 <a href="https://sneawo.com/privacy-policy.html" target="_blank" rel="noopener">Privacy</a> ·
