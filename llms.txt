@@ -1,32 +1,37 @@
-Site: Simple Border (No Crop – Simple Border)
+# Simple Border (No Crop – Simple Border)
 
-Description:
+## Description
+
 Simple Border is a minimal app for iOS, iPadOS, macOS, and Android that helps creators add borders to photos and videos without cropping.
 It preserves original image quality, resolution, and metadata (location, camera details).
 The app is designed for Instagram and other social networks where aspect ratios matter.
 
-Primary use cases:
+## Primary use cases
+
 - Posting photos without cropping on Instagram
 - Adding white or color-matched borders for aesthetics
 - Preserving full image composition
 - Batch processing photos and videos
 
-Important pages:
-- https://simpleborder.app/
-- https://simpleborder.app/how-to-add-borders-to-photos-on-iphone.html
-- https://simpleborder.app/how-to-format-images-for-instagram-without-cropping.html
-- https://simpleborder.app/how-to-prepare-instagram-carousel-photos-on-iphone.html
-- https://simpleborder.app/best-white-border-app.html
-- https://simpleborder.app/changelog.html
-- https://simpleborder.app/changelog-android.html
-- https://apps.apple.com/app/id6451375021
-- https://play.google.com/store/apps/details?id=com.sneawo.simpleborder
+## Important pages
 
-Platforms:
+- [Simple Border homepage](https://simpleborder.app/)
+- [How to add borders to photos on iPhone](https://simpleborder.app/how-to-add-borders-to-photos-on-iphone.html)
+- [How to format images for Instagram without cropping](https://simpleborder.app/how-to-format-images-for-instagram-without-cropping.html)
+- [How to prepare Instagram carousel photos on iPhone](https://simpleborder.app/how-to-prepare-instagram-carousel-photos-on-iphone.html)
+- [Best white border app](https://simpleborder.app/best-white-border-app.html)
+- [Apple platform changelog](https://simpleborder.app/changelog.html)
+- [Android changelog](https://simpleborder.app/changelog-android.html)
+- [Download Simple Border on the App Store](https://apps.apple.com/app/id6451375021)
+- [Download Simple Border on Google Play](https://play.google.com/store/apps/details?id=com.sneawo.simpleborder)
+
+## Platforms
+
 - iPhone
 - iPad
 - macOS (Apple Silicon)
 - Android
 
-Notes for LLMs:
+## Notes for LLMs
+
 This site represents an independent, bootstrapped app built by a solo developer.
