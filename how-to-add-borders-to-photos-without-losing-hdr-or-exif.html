@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Add Photo Borders Without Losing HDR or EXIF – Simple Border</title>
-    <meta name="description" content="Add photo borders on iPhone or Mac while preserving HDR highlights. Learn which settings to use, how to check EXIF metadata, and what our export test measured.">
+    <meta name="description" content="Add photo borders on iPhone or Mac while preserving HDR highlights. Download a real HDR export, learn which settings to use, and check EXIF camera metadata.">
     <link rel="icon" href="i/favicon.png" sizes="32x32" type="image/png">
     <link rel="canonical" href="https://simpleborder.app/how-to-add-borders-to-photos-without-losing-hdr-or-exif.html">
     <meta property="og:title" content="Add Photo Borders Without Losing HDR or EXIF">
@@ -345,6 +345,22 @@
             font-size: 13px;
             margin-top: 10px;
         }
+        .hdr-example {
+            grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+        }
+        .hdr-example img {
+            dynamic-range-limit: no-limit;
+        }
+        .section .export-link {
+            display: inline-block;
+            max-width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+        }
         .facts {
             display: grid;
             grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
@@ -374,6 +390,15 @@
         .section h2 {
             scroll-margin-top: 16px;
         }
+        @media (max-width: 720px) {
+            .hdr-example {
+                grid-template-columns: 1fr;
+            }
+            .hdr-example figure {
+                max-width: 360px;
+                margin: 0 auto;
+            }
+        }
         @media (max-width: 640px) {
             .evidence {
             grid-template-columns: 1fr;
@@ -393,10 +418,10 @@
       "@type": "Article",
       "@id": "https://simpleborder.app/how-to-add-borders-to-photos-without-losing-hdr-or-exif.html#article",
       "headline": "How to add borders to photos without losing HDR or EXIF data",
-      "description": "An iPhone and Mac workflow for preserving HDR highlights and checking camera metadata when adding photo borders.",
+      "description": "An iPhone and Mac workflow for photo borders, with a downloadable HDR export and a separate camera metadata test.",
       "url": "https://simpleborder.app/how-to-add-borders-to-photos-without-losing-hdr-or-exif.html",
       "mainEntityOfPage": "https://simpleborder.app/how-to-add-borders-to-photos-without-losing-hdr-or-exif.html",
-      "image": "https://simpleborder.app/i/og-image.png",
+      "image": "https://simpleborder.app/i/examples/hdr-iphone-13-preview.jpg",
       "datePublished": "2026-10-14",
       "dateModified": "2026-10-14",
       "author": {
@@ -523,8 +548,8 @@
                         start with the original photo and check the saved result. HDR and EXIF are separate properties:
                         verify both before sharing.</p>
                     <p>Simple Border introduced HDR photo and video exports on iOS and macOS in <a
-                            href="changelog.html#release-8-7-0">version 8.7.0</a>. The workflow below uses those controls;
-                        the photo example later on records a separate metadata and resolution test.</p>
+                            href="changelog.html#release-8-7-0">version 8.7.0</a>. The workflow below uses those controls.
+                        See a real HDR export and a separate metadata and resolution test further down.</p>
                     <div class="store-links intro-store"><a class="store-badge" href="https://apps.apple.com/app/apple-store/id6451375021?pt=124097192&amp;ct=website-hdr-exif&amp;mt=8" target="_blank" rel="noopener"
                         data-umami-event="app-store-download" data-umami-event-location="hdr-exif-intro">
                         <img src="i/store-badges/app-store.svg" alt="Download Simple Border on the App Store">
@@ -533,7 +558,8 @@
                 <nav class="contents" aria-label="On this page">
                     <a href="#workflow">Export steps</a>
                     <a href="#hdr-and-exif">HDR vs. EXIF</a>
-                    <a href="#export-example">Real export example</a>
+                    <a href="#hdr-example">HDR example</a>
+                    <a href="#export-example">Metadata test</a>
                     <a href="#verify-export">Check the result</a>
                     <a href="#faq">Questions</a>
                 </nav>
@@ -572,6 +598,45 @@
                                 rel="noopener">HDR image overview</a>.</small></p>
                 </section>
 
+                <section class="section" aria-labelledby="hdr-example">
+                    <h2 id="hdr-example">A real HDR export from Simple Border</h2>
+                    <p>This iPhone 13 photo was framed and exported with Simple Border. The developer visually checked
+                        its HDR appearance on a MacBook screen and an iPhone on October 14, 2026.</p>
+                    <div class="evidence hdr-example">
+                        <figure>
+                            <picture>
+                                <source srcset="i/examples/hdr-iphone-13-preview.avif" type="image/avif">
+                                <img src="i/examples/hdr-iphone-13-preview.jpg" width="960" height="1200"
+                                    loading="lazy" decoding="async"
+                                    alt="White-bordered iPhone photo of a turquoise bay with boats, framed by shaded pine trees">
+                            </picture>
+                            <figcaption>Optimized HDR preview, 960 &times; 1200. Compatible browsers and displays show
+                                HDR highlights; other setups show the SDR rendition.</figcaption>
+                        </figure>
+                        <div>
+                            <dl class="facts">
+                                <dt>Camera</dt><dd>iPhone 13</dd>
+                                <dt>Framed export</dt><dd>3395 &times; 4244 pixels</dd>
+                                <dt>Full-size file</dt><dd>JPEG, 6.2 MB</dd>
+                                <dt>HDR gain map</dt><dd>Present in the export</dd>
+                                <dt>Visual check</dt><dd>MacBook and iPhone</dd>
+                            </dl>
+                            <p><a class="export-link" href="i/examples/hdr-iphone-13-export.jpg"
+                                    download="simple-border-hdr-iphone-13.jpg" aria-describedby="hdr-viewing-note"
+                                    data-umami-event="hdr-export-download">Download full-size HDR photo &middot; 6.2 MB</a></p>
+                            <p id="hdr-viewing-note">If HDR does not appear in your browser, download the original JPEG
+                                and open it in Photos on iPhone or Mac, or another HDR-capable viewer on a compatible
+                                display.</p>
+                            <p><small>The preview is about 138 KB in HDR AVIF format, with a 350 KB gain-map JPEG
+                                    fallback. The unchanged 6.2 MB export downloads only when you choose it.</small></p>
+                        </div>
+                    </div>
+                    <p><small>The web preview was resized and re-encoded from the export's image and HDR gain map.
+                            This is one exported photo and a visual check by the developer, rather than a controlled
+                            comparison with the original capture. App build, viewer versions, and exact display models
+                            were not recorded.</small></p>
+                </section>
+
                 <section class="section" aria-labelledby="export-example">
                     <h2 id="export-example">A real photo export: dimensions and metadata</h2>
                     <p>In our August 2026 comparison, we used a <strong>2422 &times; 3633</strong> image from a Sony
@@ -593,9 +658,8 @@
                                 <dt>Location</dt><dd>Kept</dd>
                                 <dt>HDR</dt><dd>Not measured in this test</dd>
                             </dl>
-                            <p><a href="i/comparisons/white-border-export-test-2026-08.csv" download>Download the
-                                    recorded measurements (CSV)</a>, or read the <a
-                                    href="best-white-border-app.html#methodology">six-app comparison and test method</a>.</p>
+                            <p>Read the <a href="best-white-border-app.html#methodology">six-app comparison and test
+                                    method</a> for the recorded measurements.</p>
                             <p><small>This is one input and one recorded export. The published test did not record app
                                     build numbers, the device model, or the OS version. Use your own source photo to
                                     verify the result for your workflow.</small></p>

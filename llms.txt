@@ -6,6 +6,7 @@ Simple Border is a minimal app for iOS, iPadOS, macOS, and Android that helps cr
 It adds borders as pixels around the original composition. Export quality depends on the selected format and settings.
 On iOS and macOS, it supports preserving HDR in compatible photos and videos, with an SDR export option.
 The site's photo export comparison reports resolution and metadata measurements from a single test image; these are not a lossless-quality guarantee.
+The HDR and EXIF guide includes an optimized HDR web preview and an unchanged full-size bordered HDR export to download. The preview is re-encoded from the export's image and HDR gain map, using HDR AVIF with a gain-map JPEG fallback. HDR appearance depends on the browser and display. The full-size file has a developer-reported visual check on MacBook and iPhone; this example is separate from the recorded metadata measurements.
 The app is designed for Instagram and other social networks where aspect ratios matter.
 
 ## Primary use cases
