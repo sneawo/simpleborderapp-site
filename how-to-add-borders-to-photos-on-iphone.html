@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>How to Add Borders to Photos on iPhone (Without Cropping) – Simple Border</title>
     <meta name="description"
-        content="Step-by-step guide to add borders to photos on iPhone without cropping using the Simple Border app for clean, consistent borders.">
+        content="Add white, black, or colored borders to iPhone photos without cropping. Choose a ratio, adjust the frame, and save. Includes examples and export-quality tips.">
     <link rel="icon" href="i/favicon.png" sizes="32x32" type="image/png">
     <link rel="canonical" href="https://simpleborder.app/how-to-add-borders-to-photos-on-iphone.html">
     <meta property="og:title" content="How to Add Borders to Photos on iPhone (Without Cropping)">
     <meta property="og:description"
-        content="Learn how to add clean borders to photos on iPhone using the Simple Border app—no cropping required.">
+        content="Add white, black, or colored borders to iPhone photos without cropping. Follow the steps, compare before and after, and check your export.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://simpleborder.app/how-to-add-borders-to-photos-on-iphone.html">
     <meta property="og:image" content="https://simpleborder.app/i/og-image.png">
@@ -160,6 +160,44 @@
             color: var(--muted);
         }
 
+        .intro .quick-answer {
+            padding: 18px;
+            border-left: 3px solid var(--accent);
+            border-radius: 0 12px 12px 0;
+            background: rgba(126, 231, 135, .07);
+            color: var(--fg);
+        }
+
+        .intro a {
+            color: var(--accent);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .comparison-grid figure {
+            margin: 0;
+        }
+
+        .comparison-grid img {
+            display: block;
+            width: min(100%, 250px);
+            height: auto;
+            margin: 0 auto;
+            border-radius: 12px;
+        }
+
+        .comparison-grid figcaption {
+            margin: 10px 0 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
         .store-links {
             display: flex;
             align-items: center;
@@ -278,6 +316,10 @@
             .wrap {
                 padding: 20px;
             }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
     <script defer src="https://cloud.umami.is/script.js"
@@ -288,6 +330,7 @@
     "@type": "HowTo",
     "name": "How to add borders to photos on iPhone without cropping",
     "description": "Step-by-step instructions for adding clean borders to photos on iPhone using the Simple Border app.",
+    "dateModified": "2026-10-14",
     "image": "https://simpleborder.app/i/screenshots/1.jpeg",
     "totalTime": "PT2M",
     "tool": [
@@ -339,7 +382,7 @@
                 <div class="brand-title"><a href="/">Simple Border</a></div>
             </div>
             <nav class="store-links header-store" aria-label="Download Simple Border">
-                <a class="store-badge" href="https://apps.apple.com/app/id6451375021" target="_blank" rel="noopener"
+                <a class="store-badge" href="https://apps.apple.com/app/apple-store/id6451375021?pt=124097192&amp;ct=website-iphone-guide&amp;mt=8" target="_blank" rel="noopener"
                     data-umami-event="app-store-download" data-umami-event-location="howto-header">
                     <img src="i/store-badges/app-store.svg" alt="Download on the App Store">
                 </a>
@@ -353,29 +396,57 @@
 
         <main>
             <h1 class="page-title">How to add borders to photos on iPhone</h1>
-            <p class="subtitle">The fastest no-crop workflow to add clean borders on iPhone using Simple Border.</p>
+            <p class="subtitle">Add a white, black, or colored frame while keeping the whole photo visible.</p>
 
             <section class="intro">
-                <p>Borders can make your photos stand out on Instagram, keep your full composition without cropping, and
-                    add a print-like frame around your images.</p>
+                <p class="quick-answer"><strong>Quick answer:</strong> Open your photo in Simple Border, choose
+                    <strong>Original</strong> for a frame or a target ratio such as <strong>1:1</strong> or
+                    <strong>4:5</strong>, then select a border color and width. Save or share the result: the border
+                    fills extra space around your photo so you can keep the full composition.</p>
+                <p>Need only a crop or rotation? The <a
+                        href="https://support.apple.com/guide/iphone/iph0f3ebb1dd/ios" target="_blank"
+                        rel="noopener">built-in Photos editing tools</a> may be enough. Use a border when you want to
+                    fit a different shape while retaining the edges of the image.</p>
                 <div class="store-links intro-store">
-                    <a class="store-badge" href="https://apps.apple.com/app/id6451375021" target="_blank"
+                    <a class="store-badge" href="https://apps.apple.com/app/apple-store/id6451375021?pt=124097192&amp;ct=website-iphone-guide&amp;mt=8" target="_blank"
                         rel="noopener" data-umami-event="app-store-download" data-umami-event-location="howto-hero">
                         <img src="i/store-badges/app-store.svg" alt="Download on the App Store">
                     </a>
                 </div>
             </section>
 
+            <section class="section" aria-labelledby="crop-vs-border">
+                <h2 id="crop-vs-border">Cropping vs. adding a border</h2>
+                <p>Cropping fills the new shape by removing part of the photo. A border makes room for the complete
+                    image instead. In this Instagram example, the border keeps both the ceiling detail and the lower
+                    part of the scene visible.</p>
+                <div class="comparison-grid">
+                    <figure>
+                        <img src="i/how-to/ig-no-border-top.jpg" width="800" height="1496" loading="lazy"
+                            alt="Instagram crop preview showing the top of the scene while cutting off the lower part">
+                        <figcaption><strong>Without a border:</strong> fitting the photo by cropping removes part of
+                            the scene.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="i/how-to/ig-white-border.jpg" width="800" height="1496" loading="lazy"
+                            alt="The same scene with a white border, keeping the ceiling and lower part visible">
+                        <figcaption><strong>With a border:</strong> the full composition fits inside the new
+                            canvas.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
             <section class="section" aria-labelledby="method-simple-border">
                 <h2 id="method-simple-border">Add borders with Simple Border</h2>
-                <p>Simple Border is designed specifically for adding clean, no-crop borders to photos and videos on
-                    iPhone and iPad. It adds borders as extra pixels around your image, so you keep full resolution –
-                    ideal for Instagram, portfolios, and printing.</p>
+                <p>Simple Border adds space around the photo rather than cutting into it. Use the same workflow for
+                    a white gallery frame, a black border, or a custom color. The output canvas can be larger than
+                    the input because it includes those extra pixels.</p>
 
                 <h3>Steps</h3>
                 <ol>
                     <li><strong>Install Simple Border</strong><br>Download <a
-                            href="https://apps.apple.com/app/id6451375021" target="_blank" rel="noopener">Simple
+                            href="https://apps.apple.com/app/apple-store/id6451375021?pt=124097192&amp;ct=website-iphone-guide&amp;mt=8" target="_blank" rel="noopener"
+                            data-umami-event="app-store-download" data-umami-event-location="howto-steps">Simple
                             Border</a> from the App Store and open the app.</li>
                     <li><strong>Choose your photo</strong><br>Tap the <strong>Choose Media</strong> button to pick a
                         photo from your library, or share a photo from the Photos app into Simple Border via the Share
@@ -387,8 +458,10 @@
                         right. Use the color picker to choose white, black, or any custom color that matches your
                         image or brand.
                         <div style="margin: 12px 0; text-align: center;">
-                            <img src="i/how-to/step3-4.jpeg" alt="Selecting an aspect ratio in Simple Border"
-                                width="100%" style="max-width: 320px; border-radius: 12px; display: inline-block;">
+                            <img src="i/how-to/step3-4.jpeg"
+                                alt="Simple Border with 4:5 selected, a white border, and the frame-width slider"
+                                width="716" height="1259" loading="lazy"
+                                style="width: 100%; height: auto; max-width: 320px; border-radius: 12px; display: inline-block;">
                         </div>
                     </li>
                     <li><strong>Export your bordered photo</strong><br>Tap <em>Share</em> or <em>Save</em> to export
@@ -396,10 +469,11 @@
                         image back to Photos, or share directly to Instagram, Messages, and other apps.</li>
                 </ol>
 
-                <h3>Why this method is best for most people</h3>
+                <h3>When this workflow is useful</h3>
                 <ul>
                     <li><strong>No cropping</strong> – your full photo stays visible.</li>
-                    <li><strong>Sharp results</strong> – borders are added as pixels, so you keep resolution.</li>
+                    <li><strong>Resolution preserved</strong> – the frame adds pixels around your photo. Choose an
+                        export quality that suits how you will use the result.</li>
                     <li><strong>Consistent formats</strong> – quickly switch between square, 4:5, 3:4, 9:16, and more.
                     </li>
                     <li><strong>Fast workflow</strong> – reuse your last settings, batch export (with Premium), and use
@@ -407,6 +481,20 @@
                 </ul>
                 <p><small>Tip: If you often post in the same format, enable only your favorite aspect ratios in Simple
                         Border settings to make choosing even faster.</small></p>
+            </section>
+
+            <section class="section" aria-labelledby="check-export">
+                <h2 id="check-export">Check resolution, metadata, and HDR before sharing</h2>
+                <p>Keeping the whole composition and retaining pixel dimensions are different from producing a
+                    lossless file. Export format and quality settings still matter. Save one image first and inspect
+                    it at full size before applying the same style to a batch.</p>
+                <p>For measured output dimensions and camera-metadata results, see our <a
+                        href="best-white-border-app.html#methodology">six-app photo export test</a>. The comparison
+                    uses one Sony ZV-E10 photo; it does not establish identical results for every input or app version.</p>
+                <p>On iOS and macOS, Simple Border supports preserving HDR in compatible photos and videos. Keep HDR
+                    enabled for an HDR export, or tap the HDR pill or enable <strong>Always save as SDR</strong> in
+                    Settings for SDR. The display and viewing app affect how the highlights appear. See the <a
+                        href="changelog.html">HDR release notes</a> for the supported workflow.</p>
             </section>
 
             <section class="section" aria-labelledby="tips-borders">
@@ -433,7 +521,9 @@
                     Preparing multiple photos for one post? Use the <a
                         href="how-to-prepare-instagram-carousel-photos-on-iphone.html">Instagram carousel photo
                         guide</a>. For a focused workflow, see <a
-                        href="how-to-add-black-borders-to-photos.html">how to add a black border or black bars</a>.</p>
+                        href="how-to-add-black-borders-to-photos.html">how to add a black border or black bars</a>.
+                    Choosing an app? Compare <a href="best-white-border-app.html">six white border apps and their
+                        measured exports</a>.</p>
             </section>
         </main>
 

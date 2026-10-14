@@ -1,0 +1,7 @@
+test_month,app,source_width_px,source_height_px,output_width_px,output_height_px,file_size_reported,camera_metadata,location,export_notes
+2026-08,Simple Border,2422,3633,3059,3824,1.1 MB,Kept,Kept,4:5 with a 5% white border
+2026-08,InstaSize,2422,3633,2907,3633,1.0 MB,Removed,Removed,4:5; border appeared slightly smaller than the requested 5%
+2026-08,White Border,2422,3633,3060,3824,431 KB,Kept,Removed,4:5
+2026-08,Square Fit,2422,3633,1920,2400,344 KB,Removed,Removed,4:5; output dimensions smaller than the source
+2026-08,Whitagram,2422,3633,3633,3633,970 KB,Removed,Removed,Square only in this test
+2026-08,No Crop - Square quick sized,2422,3633,828,828,76 KB,Removed,Removed,Square only in this test; no border-size control found
