@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Photo Borders Without Losing HDR or EXIF – Simple Border</title>
+    <meta name="description" content="Add photo borders on iPhone or Mac while preserving HDR highlights. Learn which settings to use, how to check EXIF metadata, and what our export test measured.">
+    <link rel="icon" href="i/favicon.png" sizes="32x32" type="image/png">
+    <link rel="canonical" href="https://simpleborder.app/how-to-add-borders-to-photos-without-losing-hdr-or-exif.html">
+    <meta property="og:title" content="Add Photo Borders Without Losing HDR or EXIF">
+    <meta property="og:description" content="A practical iPhone and Mac workflow for HDR photo borders, with metadata checks and a real export example.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://simpleborder.app/how-to-add-borders-to-photos-without-losing-hdr-or-exif.html">
+    <meta property="og:image" content="https://simpleborder.app/i/og-image.png">
+    <meta property="article:published_time" content="2026-10-14">
+    <meta property="article:modified_time" content="2026-10-14">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+        :root {
+            --bg: #0b0b0c;
+            --fg: #f5f5f7;
+            --muted: #b7b7bd;
+            --accent: #7ee787;
+            --card: #151517;
+            --border: #26262a;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+            color: var(--fg);
+            background: radial-gradient(1000px 600px at 80% -10%, #1b1b1f 10%, #0b0b0c 60%);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--fg);
+            text-decoration: none;
+        }
+
+        .promo-bar {
+            display: block;
+            text-decoration: none;
+            cursor: pointer;
+            background: linear-gradient(90deg, rgba(126, 231, 135, 0.12), rgba(11, 11, 12, 0.75));
+            border-bottom: 1px solid var(--border);
+            transition: background .2s ease;
+        }
+
+        .promo-bar:hover {
+            background: linear-gradient(90deg, rgba(126, 231, 135, 0.2), rgba(11, 11, 12, 0.7));
+        }
+
+        .promo-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px 24px;
+            font-size: 14px;
+            letter-spacing: .1px;
+            text-align: center;
+        }
+
+        .promo-kicker {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .promo-copy {
+            color: var(--muted);
+        }
+
+        @media (max-width: 540px) {
+            .promo-inner {
+                flex-direction: column;
+                gap: 6px;
+            }
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            padding: 12px 0 8px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: #000;
+            position: relative;
+            display: grid;
+            place-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .35), inset 0 0 0 1px #333;
+        }
+
+        .logo::after {
+            content: "";
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            background: #fff;
+            display: block;
+        }
+
+        .brand-title {
+            font-size: 22px;
+            margin: 0;
+            letter-spacing: .2px;
+            font-weight: 700;
+        }
+
+        .page-title {
+            margin: 28px 0 8px;
+            font-size: clamp(24px, 5vw, 40px);
+            letter-spacing: -.4px;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 20px;
+            font-size: 16px;
+        }
+
+        .intro {
+            margin-bottom: 28px;
+        }
+
+        .intro p {
+            margin: 0 0 12px;
+            color: var(--muted);
+        }
+
+        .intro .quick-answer {
+            padding: 18px;
+            border-left: 3px solid var(--accent);
+            border-radius: 0 12px 12px 0;
+            background: rgba(126, 231, 135, .07);
+            color: var(--fg);
+        }
+
+        .intro a {
+            color: var(--accent);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .store-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .header-store {
+            justify-content: flex-end;
+        }
+
+        .store-badge {
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            transition: transform .15s ease, opacity .15s ease;
+        }
+
+        .store-badge:hover {
+            transform: translateY(-2px);
+            opacity: .92;
+        }
+
+        .store-badge:focus-visible {
+            outline: 2px solid #f5f5f7;
+            outline-offset: 3px;
+            border-radius: 8px;
+        }
+
+        .store-badge img {
+            display: block;
+            width: auto;
+            height: 40px;
+        }
+
+        .intro-store .store-badge img {
+            height: 44px;
+        }
+
+        .section {
+            margin: 30px 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 18px 18px 20px;
+        }
+
+        .section h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+
+        .section h3 {
+            margin: 18px 0 8px;
+            font-size: 17px;
+        }
+
+        .section p {
+            margin: 0 0 10px;
+            color: var(--fg);
+        }
+
+        .section a {
+            color: var(--accent);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .section a:hover {
+            color: #a7f3ad;
+        }
+
+        .section ul,
+        .section ol {
+            margin: 0 0 10px 20px;
+            padding: 0;
+            color: var(--fg);
+        }
+
+        .section li {
+            margin: 4px 0;
+        }
+
+        .section small {
+            color: var(--muted);
+        }
+
+        .faq {
+            margin-top: 24px;
+        }
+
+        .faq-item+.faq-item {
+            margin-top: 14px;
+        }
+
+        .faq-item h3 {
+            margin: 0 0 4px;
+            font-size: 16px;
+        }
+
+        .faq-item p {
+            margin: 0;
+        }
+
+        footer {
+            color: var(--muted);
+            font-size: 14px;
+            margin: 40px 0 16px;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 640px) {
+            .wrap {
+                padding: 20px;
+            }
+        }
+    
+        .page-title {
+            line-height: 1.15;
+        }
+        .article-meta {
+            color: var(--muted);
+            font-size: 14px;
+            margin: 12px 0 22px;
+        }
+        .contents {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .contents a {
+            color: var(--accent);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        a:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+            border-radius: 3px;
+        }
+        .section p, .section li {
+            max-width: 74ch;
+        }
+        .steps li {
+            margin: 14px 0;
+        }
+        .evidence {
+            display: grid;
+            grid-template-columns: minmax(0, 270px) minmax(0, 1fr);
+            gap: 24px;
+            align-items: start;
+            margin: 20px 0;
+        }
+        .evidence figure {
+            margin: 0;
+        }
+        .evidence img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+        .evidence figcaption {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 10px;
+        }
+        .facts {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+            gap: 10px 16px;
+            margin: 0 0 20px;
+        }
+        .facts dt {
+            color: var(--muted);
+        }
+        .facts dd {
+            margin: 0;
+        }
+        .terms {
+            margin: 0;
+        }
+        .terms dt {
+            font-weight: 700;
+            margin-top: 16px;
+        }
+        .terms dd {
+            margin: 4px 0 0;
+            max-width: 74ch;
+        }
+        .bottom-cta .store-links {
+            margin-top: 16px;
+        }
+        .section h2 {
+            scroll-margin-top: 16px;
+        }
+        @media (max-width: 640px) {
+            .evidence {
+            grid-template-columns: 1fr;
+        }
+            .evidence figure {
+            max-width: 320px;
+            margin: 0 auto;
+        }
+        }
+    </style>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="73f82c83-e126-42bf-9759-c0b78d84a706"></script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://simpleborder.app/how-to-add-borders-to-photos-without-losing-hdr-or-exif.html#article",
+      "headline": "How to add borders to photos without losing HDR or EXIF data",
+      "description": "An iPhone and Mac workflow for preserving HDR highlights and checking camera metadata when adding photo borders.",
+      "url": "https://simpleborder.app/how-to-add-borders-to-photos-without-losing-hdr-or-exif.html",
+      "mainEntityOfPage": "https://simpleborder.app/how-to-add-borders-to-photos-without-losing-hdr-or-exif.html",
+      "image": "https://simpleborder.app/i/og-image.png",
+      "datePublished": "2026-10-14",
+      "dateModified": "2026-10-14",
+      "author": {
+        "@type": "Organization",
+        "name": "Simple Border",
+        "url": "https://simpleborder.app/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Simple Border",
+        "url": "https://simpleborder.app/"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://simpleborder.app/how-to-add-borders-to-photos-without-losing-hdr-or-exif.html#workflow",
+      "name": "Add a photo border and check HDR and metadata",
+      "description": "Frame a supported photo in Simple Border on iOS or macOS, keep HDR enabled, and verify the saved result.",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "Simple Border on iOS or macOS"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Start with the original photo",
+          "text": "Choose a source that already contains the HDR information and camera details you want to keep. In Photos, open the original and swipe up or tap Info to check its camera information and location.",
+          "url": "https://simpleborder.app/how-to-add-borders-to-photos-without-losing-hdr-or-exif.html#step-1"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Choose the frame",
+          "text": "Open the photo in Simple Border. Choose Original for a frame around the existing shape, or select a target ratio such as square or 4:5. Set the border color and width.",
+          "url": "https://simpleborder.app/how-to-add-borders-to-photos-without-losing-hdr-or-exif.html#step-2"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Keep HDR enabled",
+          "text": "For a supported HDR photo, leave HDR enabled in the editor. If you prefer photos without HDR, you can turn it off by enabling Always save as SDR in Settings or tapping the HDR pill in the editor.",
+          "url": "https://simpleborder.app/how-to-add-borders-to-photos-without-losing-hdr-or-exif.html#step-3"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Save and check the export",
+          "text": "Save the bordered photo and compare it with the original. Inspect camera details and location in Photos, then compare highlights in an HDR-capable viewer on the same display. Check the file received by the destination app as well.",
+          "url": "https://simpleborder.app/how-to-add-borders-to-photos-without-losing-hdr-or-exif.html#step-4"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://simpleborder.app/how-to-add-borders-to-photos-without-losing-hdr-or-exif.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does adding a border remove EXIF data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the app and export workflow. In our August 2026 single-photo test, Simple Border kept camera metadata and location. Start with a file that contains the details you need, then check the saved export."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a HEIC or JPEG filename prove HDR is preserved?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. HEIF and JPEG can carry HDR gain-map data, but the file extension alone does not confirm that it survived an edit. Check the source and saved export in an HDR-capable viewer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my bordered photo look less bright?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Check that the source is HDR, HDR is enabled in Simple Border, and Always save as SDR is off. Compare the original and export on the same display in the same viewing app. A receiving app may show an SDR rendition."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this HDR workflow apply to Android?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The HDR controls described here are available on iOS and macOS. Android has a separate feature set; check the Android changelog for its current features."
+          }
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <a class="promo-bar" href="changelog.html">
+        <div class="promo-inner">
+            <span class="promo-kicker">New in 8.7.0</span>
+            <span class="promo-copy">Keep HDR highlights when adding borders on iOS and macOS.</span>
+        </div>
+    </a>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <a href="/" aria-label="Go home"><img src="i/icon.png" alt="Simple Border app icon" class="logo"></a>
+                <div class="brand-title"><a href="/">Simple Border</a></div>
+            </div>
+            <nav class="store-links header-store" aria-label="Download Simple Border">
+                <a class="store-badge" href="https://apps.apple.com/app/apple-store/id6451375021?pt=124097192&amp;ct=website-hdr-exif&amp;mt=8" target="_blank" rel="noopener"
+                        data-umami-event="app-store-download" data-umami-event-location="hdr-exif-header">
+                        <img src="i/store-badges/app-store.svg" alt="Download Simple Border on the App Store">
+                    </a>
+            </nav>
+        </header>
+        <main>
+            <article>
+                <h1 class="page-title">How to add borders to photos without losing HDR or EXIF data</h1>
+                <p class="subtitle">Keep bright highlights, retain camera details, and check the photo you actually save.</p>
+                <p class="article-meta">Written by Simple Border's developer. Updated <time datetime="2026-10-14">October 14, 2026</time>.
+                    HDR workflow: iOS and macOS.</p>
+                <section class="intro" aria-label="Quick answer">
+                    <p class="quick-answer"><strong>Quick answer:</strong> Open a supported HDR photo in Simple Border
+                        on iPhone or Mac, choose your border, and leave HDR enabled when saving. If you prefer photos
+                        without HDR, you can turn it off by enabling <strong>Always save as SDR</strong> in Settings. To retain EXIF camera details,
+                        start with the original photo and check the saved result. HDR and EXIF are separate properties:
+                        verify both before sharing.</p>
+                    <p>Simple Border introduced HDR photo and video exports on iOS and macOS in <a
+                            href="changelog.html#release-8-7-0">version 8.7.0</a>. The workflow below uses those controls;
+                        the photo example later on records a separate metadata and resolution test.</p>
+                    <div class="store-links intro-store"><a class="store-badge" href="https://apps.apple.com/app/apple-store/id6451375021?pt=124097192&amp;ct=website-hdr-exif&amp;mt=8" target="_blank" rel="noopener"
+                        data-umami-event="app-store-download" data-umami-event-location="hdr-exif-intro">
+                        <img src="i/store-badges/app-store.svg" alt="Download Simple Border on the App Store">
+                    </a></div>
+                </section>
+                <nav class="contents" aria-label="On this page">
+                    <a href="#workflow">Export steps</a>
+                    <a href="#hdr-and-exif">HDR vs. EXIF</a>
+                    <a href="#export-example">Real export example</a>
+                    <a href="#verify-export">Check the result</a>
+                    <a href="#faq">Questions</a>
+                </nav>
+
+                <section class="section" aria-labelledby="workflow">
+                    <h2 id="workflow">Add the border and keep the details you need</h2>
+                    <ol class="steps">
+                    <li id="step-1"><strong>Start with the original photo.</strong> Choose a source that already contains the HDR information and camera details you want to keep. In Photos, open the original and swipe up or tap Info to check its camera information and location.</li>
+                    <li id="step-2"><strong>Choose the frame.</strong> Open the photo in Simple Border. Choose Original for a frame around the existing shape, or select a target ratio such as square or 4:5. Set the border color and width.</li>
+                    <li id="step-3"><strong>Keep HDR enabled.</strong> For a supported HDR photo, leave HDR enabled in the editor. If you prefer photos without HDR, you can turn it off by enabling Always save as SDR in Settings or tapping the HDR pill in the editor.</li>
+                    <li id="step-4"><strong>Save and check the export.</strong> Save the bordered photo and compare it with the original. Inspect camera details and location in Photos, then compare highlights in an HDR-capable viewer on the same display. Check the file received by the destination app as well.</li>
+                    </ol>
+                    <p>On Mac, the same HDR/SDR choice applies. Use Photos' Info window to compare the source and saved
+                        photo. For a fuller introduction to choosing ratios and colors, see the <a
+                            href="how-to-add-borders-to-photos-on-iphone.html">iPhone border guide</a>.</p>
+                </section>
+
+                <section class="section" aria-labelledby="hdr-and-exif">
+                    <h2 id="hdr-and-exif">HDR, EXIF, and resolution mean different things</h2>
+                    <dl class="terms">
+                        <dt>HDR: how highlights are displayed</dt>
+                        <dd>High dynamic range can show bright skies, reflections, and lights beyond the normal SDR
+                            range on a compatible display. HDR image data and a viewer that supports it both matter.
+                            Some photos carry an SDR image plus additional HDR gain-map information.</dd>
+                        <dt>EXIF: information about the photograph</dt>
+                        <dd>Camera model, lens, exposure settings, and capture time describe how the photo was made.
+                            GPS fields can record where it was taken. Keeping these fields does not establish that the
+                            image is still HDR.</dd>
+                        <dt>Resolution: the pixel dimensions</dt>
+                        <dd>A border adds canvas around the photo, so the finished file can have larger dimensions.
+                            Keeping pixel dimensions is separate from keeping HDR or metadata, and does not prove that
+                            a newly encoded file is lossless.</dd>
+                    </dl>
+                    <p><small>For the underlying HDR format behavior, see Apple's <a
+                                href="https://developer.apple.com/videos/play/wwdc2024/10177/" target="_blank"
+                                rel="noopener">HDR image overview</a>.</small></p>
+                </section>
+
+                <section class="section" aria-labelledby="export-example">
+                    <h2 id="export-example">A real photo export: dimensions and metadata</h2>
+                    <p>In our August 2026 comparison, we used a <strong>2422 &times; 3633</strong> image from a Sony
+                        ZV-E10 RAW workflow and requested a <strong>4:5 frame with a 5% white border</strong>. The
+                        recorded Simple Border export kept camera metadata and location.</p>
+                    <div class="evidence">
+                        <figure>
+                            <img src="i/comparisons/simple-border-sony-zv-e10-test.jpg" width="1240" height="1550"
+                                loading="lazy" alt="Sony ZV-E10 flower photo framed by Simple Border with a white 4:5 border">
+                            <figcaption>Resized JPEG preview, 1240 &times; 1550. It illustrates the composition;
+                                it is not an HDR demonstration or the original measured export.</figcaption>
+                        </figure>
+                        <div>
+                            <dl class="facts">
+                                <dt>Source image</dt><dd>2422 &times; 3633 pixels</dd>
+                                <dt>Framed export</dt><dd>3059 &times; 3824 pixels</dd>
+                                <dt>Recorded file size</dt><dd>1.1 MB</dd>
+                                <dt>Camera metadata</dt><dd>Kept</dd>
+                                <dt>Location</dt><dd>Kept</dd>
+                                <dt>HDR</dt><dd>Not measured in this test</dd>
+                            </dl>
+                            <p><a href="i/comparisons/white-border-export-test-2026-08.csv" download>Download the
+                                    recorded measurements (CSV)</a>, or read the <a
+                                    href="best-white-border-app.html#methodology">six-app comparison and test method</a>.</p>
+                            <p><small>This is one input and one recorded export. The published test did not record app
+                                    build numbers, the device model, or the OS version. Use your own source photo to
+                                    verify the result for your workflow.</small></p>
+                        </div>
+                    </div>
+                    <p>Keep your original RAW or camera file as well as the bordered copy. A framed image is a new
+                        export; its larger canvas does not replace the original capture.</p>
+                </section>
+
+                <section class="section" aria-labelledby="verify-export">
+                    <h2 id="verify-export">Check the saved photo before sending it</h2>
+                    <h3>Check camera details and location</h3>
+                    <p>On iPhone, open the original in Photos and <strong>swipe up or tap Info</strong>. Note the camera,
+                        lens, capture time, and location that are available. Open the saved bordered photo and compare
+                        the same fields. On Mac, select the photo in Photos and click <strong>Info</strong>.</p>
+                    <p>Only expect fields that are present in the source. A photo without GPS data cannot retain a
+                        recorded location that was never there. A caption or a manually edited library date is also
+                        different from embedded camera metadata.</p>
+                    <h3>Check HDR on the same display</h3>
+                    <p>Compare the original and export in an HDR-capable viewer on the same display, with the same
+                        viewing conditions. If the bordered copy looks flat, first check the HDR choice in Simple
+                        Border and the <strong>Always save as SDR</strong> setting. Then check whether the viewing app
+                        supports HDR. Visual comparison is a useful first check, not a file-format certification.</p>
+                    <h3>Check the file after sharing</h3>
+                    <p>Inspect the copy received through your intended sharing route, not just the copy in Photos.
+                        The receiving app or service may convert the image or remove metadata. For a consistent SDR
+                        version, choose SDR explicitly in Simple Border and check that saved version before posting.</p>
+                    <p>If you prefer to omit location, Photos' share options let you turn off <strong>Location</strong>
+                        for sharing. Keeping camera settings and choosing whether to share GPS information are separate
+                        decisions.</p>
+                </section>
+
+                <section class="section faq" aria-labelledby="faq">
+                    <h2 id="faq">Frequently asked questions</h2>
+                <div class="faq-item">
+                    <h3>Does adding a border remove EXIF data?</h3>
+                    <p>It depends on the app and export workflow. In our August 2026 single-photo test, Simple Border kept camera metadata and location. Start with a file that contains the details you need, then check the saved export.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Does a HEIC or JPEG filename prove HDR is preserved?</h3>
+                    <p>No. HEIF and JPEG can carry HDR gain-map data, but the file extension alone does not confirm that it survived an edit. Check the source and saved export in an HDR-capable viewer.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Why does my bordered photo look less bright?</h3>
+                    <p>Check that the source is HDR, HDR is enabled in Simple Border, and Always save as SDR is off. Compare the original and export on the same display in the same viewing app. A receiving app may show an SDR rendition.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Does this HDR workflow apply to Android?</h3>
+                    <p>The HDR controls described here are available on iOS and macOS. Android has a separate feature
+                        set; check the Android changelog for its current features.</p>
+                    <p><a href="changelog-android.html">See Android release notes</a>.</p>
+                </div>
+                </section>
+
+                <section class="section" aria-labelledby="sources">
+                    <h2 id="sources">Sources and related guides</h2>
+                    <ul>
+                        <li><a href="changelog.html#release-8-7-0">Simple Border 8.7.0 release notes</a>: HDR export controls on iOS and macOS.</li>
+                        <li><a href="best-white-border-app.html#methodology">Our photo export comparison</a>: the recorded metadata and resolution example.</li>
+                        <li><a href="https://support.apple.com/guide/iphone/iph0edb9c18f/ios" target="_blank" rel="noopener">Apple: see photo and video information on iPhone</a>.</li>
+                        <li><a href="https://support.apple.com/guide/personal-safety/ips0d7a5df82/web" target="_blank" rel="noopener">Apple: manage location metadata in Photos</a>.</li>
+                        <li><a href="https://developer.apple.com/videos/play/wwdc2024/10177/" target="_blank" rel="noopener">Apple: HDR image behavior and gain maps</a>.</li>
+                    </ul>
+                    <p>For a particular look, follow the <a href="how-to-add-black-borders-to-photos.html">black-border
+                            guide</a>. For a social post, choose a canvas with the <a
+                            href="how-to-format-images-for-instagram-without-cropping.html">Instagram format guide</a>.</p>
+                </section>
+
+                <section class="section bottom-cta" aria-labelledby="get-simple-border">
+                    <h2 id="get-simple-border">Keep the whole photo, then check the export</h2>
+                    <p>Choose a border, keep HDR enabled for supported media, and save a copy with Simple Border on
+                        iPhone, iPad, or Apple-silicon Mac.</p>
+                    <div class="store-links" aria-label="Download Simple Border"><a class="store-badge" href="https://apps.apple.com/app/apple-store/id6451375021?pt=124097192&amp;ct=website-hdr-exif&amp;mt=8" target="_blank" rel="noopener"
+                        data-umami-event="app-store-download" data-umami-event-location="hdr-exif-bottom">
+                        <img src="i/store-badges/app-store.svg" alt="Download Simple Border on the App Store">
+                    </a></div>
+                </section>
+            </article>
+        </main>
+        <footer>
+            <div>© <span id="year"></span> Simple Border · All rights reserved.</div>
+            <div>
+                <a href="/">Home</a> ·
+                <a href="how-to-add-borders-to-photos-on-iphone.html">iPhone border guide</a> ·
+                <a href="how-to-format-images-for-instagram-without-cropping.html">Instagram format guide</a> ·
+                <a href="how-to-add-black-borders-to-photos.html">Black border guide</a> ·
+                <a href="how-to-prepare-instagram-carousel-photos-on-iphone.html">Instagram carousel guide</a> ·
+                <a href="best-white-border-app.html">Best white border app</a> ·
+                <a href="changelog.html">Changelog</a> ·
+                <a href="mailto:support+simpleborder@sneawo.com">Support</a> ·
+                <a href="https://sneawo.com/privacy-policy.html" target="_blank" rel="noopener">Privacy</a> ·
+                <a href="https://sneawo.com/terms.html" target="_blank" rel="noopener">Terms</a>
+            </div>
+        </footer>
+    </div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

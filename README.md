@@ -12,6 +12,7 @@ App Store links use provider token `124097192`, taken from the campaign link gen
 | --- | --- |
 | Homepage | `website-home` |
 | iPhone border guide | `website-iphone-guide` |
+| HDR and EXIF guide | `website-hdr-exif` |
 | Black-border guide | `website-black-borders` |
 | App comparison | `website-app-comparison` |
 | Instagram format guide | `website-instagram-formats` |
