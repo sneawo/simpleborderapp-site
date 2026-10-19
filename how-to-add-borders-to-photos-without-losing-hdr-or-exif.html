@@ -423,7 +423,7 @@
       "mainEntityOfPage": "https://simpleborder.app/how-to-add-borders-to-photos-without-losing-hdr-or-exif.html",
       "image": "https://simpleborder.app/i/examples/hdr-iphone-13-preview.jpg",
       "datePublished": "2026-10-14",
-      "dateModified": "2026-10-14",
+      "dateModified": "2026-10-19",
       "author": {
         "@type": "Organization",
         "name": "Simple Border",
@@ -503,6 +503,14 @@
         },
         {
           "@type": "Question",
+          "name": "Why can HDR show in Instagram but look flat in a browser preview?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Two pages can display different renditions of the same photo. HDR appearance also depends on the image format, browser, and display; an SDR screen cannot show the extra brightness of HDR highlights. This guide uses a resized HDR preview and offers the unchanged app export separately. If the preview looks flat, download the full-size JPEG and open it in Photos on the same HDR-capable display. If HDR appears there, a flat browser preview alone does not establish that the export lost HDR."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Does this HDR workflow apply to Android?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -539,7 +547,7 @@
             <article>
                 <h1 class="page-title">How to add borders to photos without losing HDR or EXIF data</h1>
                 <p class="subtitle">Keep bright highlights, retain camera details, and check the photo you actually save.</p>
-                <p class="article-meta">Written by Simple Border's developer. Updated <time datetime="2026-10-14">October 14, 2026</time>.
+                <p class="article-meta">Written by Simple Border's developer. Updated <time datetime="2026-10-19">October 19, 2026</time>.
                     HDR workflow: iOS and macOS.</p>
                 <section class="intro" aria-label="Quick answer">
                     <p class="quick-answer"><strong>Quick answer:</strong> Open a supported HDR photo in Simple Border
@@ -626,7 +634,8 @@
                                     data-umami-event="hdr-export-download">Download full-size HDR photo &middot; 6.2 MB</a></p>
                             <p id="hdr-viewing-note">If HDR does not appear in your browser, download the original JPEG
                                 and open it in Photos on iPhone or Mac, or another HDR-capable viewer on a compatible
-                                display.</p>
+                                display. <a href="#hdr-browser-faq">Why can HDR look different in Instagram and a
+                                    browser?</a></p>
                             <p><small>The preview is about 138 KB in HDR AVIF format, with a 350 KB gain-map JPEG
                                     fallback. The unchanged 6.2 MB export downloads only when you choose it.</small></p>
                         </div>
@@ -705,6 +714,11 @@
                 <div class="faq-item">
                     <h3>Why does my bordered photo look less bright?</h3>
                     <p>Check that the source is HDR, HDR is enabled in Simple Border, and Always save as SDR is off. Compare the original and export on the same display in the same viewing app. A receiving app may show an SDR rendition.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 id="hdr-browser-faq">Why can HDR show in Instagram but look flat in a browser preview?</h3>
+                    <p>Two pages can display different renditions of the same photo. HDR appearance also depends on the image format, browser, and display; an SDR screen cannot show the extra brightness of HDR highlights. This guide uses a resized HDR preview and offers the unchanged app export separately. If the preview looks flat, download the full-size JPEG and open it in Photos on the same HDR-capable display. If HDR appears there, a flat browser preview alone does not establish that the export lost HDR.</p>
+                    <p><a href="https://webkit.org/blog/17333/webkit-features-in-safari-26-0/" target="_blank" rel="noopener">WebKit explains HDR image support and rendering controls in Safari</a>.</p>
                 </div>
                 <div class="faq-item">
                     <h3>Does this HDR workflow apply to Android?</h3>

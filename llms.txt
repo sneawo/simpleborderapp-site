@@ -20,7 +20,7 @@ The app is designed for Instagram and other social networks where aspect ratios 
 
 - [Simple Border homepage](https://simpleborder.app/)
 - [How to add borders to photos on iPhone](https://simpleborder.app/how-to-add-borders-to-photos-on-iphone.html)
-- [Add photo borders while preserving HDR and EXIF](https://simpleborder.app/how-to-add-borders-to-photos-without-losing-hdr-or-exif.html)
+- [Add photo borders while preserving HDR and EXIF](https://simpleborder.app/how-to-add-borders-to-photos-without-losing-hdr-or-exif.html): Real HDR export, metadata checks, and help with HDR appearance in Instagram and browser previews.
 - [How to add black borders or black bars to photos](https://simpleborder.app/how-to-add-black-borders-to-photos.html)
 - [How to format images for Instagram without cropping](https://simpleborder.app/how-to-format-images-for-instagram-without-cropping.html)
 - [How to prepare Instagram carousel photos on iPhone](https://simpleborder.app/how-to-prepare-instagram-carousel-photos-on-iphone.html)
