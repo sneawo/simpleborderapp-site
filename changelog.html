@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Simple Border – Changelog</title>
     <meta name="description"
-        content="See what’s new in No Crop – Simple Border. Recent updates, improvements, and bug fixes. Feedback and feature ideas are always welcome.">
+        content="See what’s new in Simple Border, including iPhone Duo and iPad editing layouts, smoother previews, and saving improvements.">
     <link rel="icon" href="i/favicon.png" sizes="32x32" type="image/png">
     <link rel="canonical" href="https://simpleborder.app/changelog.html">
     <meta property="og:title" content="Simple Border – Changelog">
-    <meta property="og:description" content="All updates to Simple Border in one place.">
+    <meta property="og:description" content="New in 8.8.0: more room to edit on iPhone Duo and iPad, smoother previews, and saving improvements.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://simpleborder.app/changelog.html">
     <meta property="og:image" content="https://simpleborder.app/i/og-image.png">
@@ -287,6 +287,135 @@
             }
         }
 
+        .release-title {
+            margin: 0;
+            font-size: clamp(22px, 4vw, 28px);
+            line-height: 1.25;
+            letter-spacing: -.4px;
+        }
+
+        .release-screens {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+            align-items: end;
+            gap: 24px;
+            margin: 8px 0 0;
+        }
+
+        .release-screens figure {
+            min-width: 0;
+            margin: 0;
+        }
+
+        .release-screens .ipad-screen {
+            grid-column: 1 / -1;
+        }
+
+        .release-screens figcaption {
+            margin-top: 12px;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .release-screens figcaption strong {
+            display: block;
+            color: var(--fg);
+        }
+
+        .screenshot-link {
+            display: block;
+            border-radius: 26px;
+        }
+
+        .screenshot-link:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 5px;
+        }
+
+        .device-shell {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            padding: 7px;
+            border: 1px solid #656a72;
+            border-radius: 26px;
+            background: #111315;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, .2);
+        }
+
+        .device-shell img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 19px;
+        }
+
+        .device-duo-closed {
+            border-radius: 7px 29px 29px 7px;
+        }
+
+        .device-duo-closed img {
+            border-radius: 3px 22px 22px 3px;
+        }
+
+        .device-duo-closed::after {
+            content: "";
+            position: absolute;
+            top: 6.7%;
+            left: 90%;
+            width: 7.6%;
+            aspect-ratio: 1;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: #030404;
+        }
+
+        .device-duo-open::before,
+        .device-duo-open::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            width: 15px;
+            height: 3px;
+            transform: translateX(-50%);
+            border-radius: 2px;
+            background: #92969b;
+        }
+
+        .device-duo-open::before { top: 2px; }
+        .device-duo-open::after { bottom: 2px; }
+
+        .device-ipad {
+            padding: 10px;
+        }
+
+        .device-ipad img {
+            border-radius: 16px;
+        }
+
+        .device-ipad::before {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 50%;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #020304;
+        }
+
+        @media (max-width: 640px) {
+            .release-screens {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .release-screens .closed-screen {
+                width: min(100%, 260px);
+                margin-inline: auto;
+            }
+        }
+
         .metadata {
             display: flex;
             align-items: center;
@@ -348,10 +477,10 @@
 </head>
 
 <body>
-    <a class="promo-bar" href="changelog.html">
+    <a class="promo-bar" href="changelog.html#release-8-8-0">
         <div class="promo-inner">
-            <span class="promo-kicker">New in 8.7.0</span>
-            <span class="promo-copy">Keep HDR highlights when adding borders on iOS and macOS.</span>
+            <span class="promo-kicker">New in 8.8.0</span>
+            <span class="promo-copy">More room to edit on iPhone Duo and iPad.</span>
         </div>
     </a>
     <div class="wrap">
@@ -381,6 +510,62 @@
         </nav>
 
         <ul class="changelog" aria-label="Changelog">
+            <li class="entry">
+                <article class="detail" id="release-8-8-0" aria-labelledby="release-8-8-0-title">
+                    <div class="container">
+                        <div class="versionline"><time datetime="2026-11-02">02.11.2026</time> • <span
+                                class="app">Simple Border</span> <span class="version">8.8.0</span></div>
+                        <h2 class="release-title" id="release-8-8-0-title">More room to edit on iPhone Duo and iPad</h2>
+                        <p>The editor adapts to the space you’re using, keeping your photo preview large and the
+                            controls within easy reach.</p>
+                        <ul>
+                            <li><strong>iPhone Duo:</strong> use the compact editor on the outer display, then open Duo
+                                for a larger preview and separate editing controls.</li>
+                            <li><strong>iPad:</strong> work with your preview and controls side by side in landscape,
+                                or rotate to portrait for a full-width preview above a compact panel.</li>
+                            <li>Smoother photo previews when changing formats, borders and captions.</li>
+                            <li>More reliable saving with limited Photos access. If an HDR export fails, the app retries
+                                in SDR and lets you know.</li>
+                        </ul>
+                        <div class="release-screens" aria-label="iPhone Duo and iPad screenshots">
+                            <figure class="closed-screen">
+                                <a class="screenshot-link" href="i/changelog/v8.8.0/iphone-duo-closed.webp"
+                                    target="_blank" rel="noopener" aria-label="View full-size screenshot of the closed iPhone Duo editor">
+                                    <span class="device-shell device-duo-closed">
+                                        <img src="i/changelog/v8.8.0/iphone-duo-closed.webp" width="720" height="1048"
+                                            loading="lazy" decoding="async"
+                                            alt="Simple Border on the closed iPhone Duo, showing a photo with a white border and compact format controls">
+                                    </span>
+                                </a>
+                                <figcaption><strong>iPhone Duo · Closed</strong>Compact controls on the outer display.</figcaption>
+                            </figure>
+                            <figure>
+                                <a class="screenshot-link" href="i/changelog/v8.8.0/iphone-duo-open.webp"
+                                    target="_blank" rel="noopener" aria-label="View full-size screenshot of the open iPhone Duo editor">
+                                    <span class="device-shell device-duo-open">
+                                        <img src="i/changelog/v8.8.0/iphone-duo-open.webp" width="1600" height="1125"
+                                            loading="lazy" decoding="async"
+                                            alt="Simple Border on the open iPhone Duo, with a cat photo beside the suggested border colors">
+                                    </span>
+                                </a>
+                                <figcaption><strong>iPhone Duo · Open</strong>A larger preview beside the color controls.</figcaption>
+                            </figure>
+                            <figure class="ipad-screen">
+                                <a class="screenshot-link" href="i/changelog/v8.8.0/ipad-landscape.webp"
+                                    target="_blank" rel="noopener" aria-label="View full-size screenshot of the landscape iPad editor">
+                                    <span class="device-shell device-ipad">
+                                        <img src="i/changelog/v8.8.0/ipad-landscape.webp" width="1600" height="1199"
+                                            loading="lazy" decoding="async"
+                                            alt="Simple Border on iPad in landscape, showing a bordered cat photo and its caption controls side by side">
+                                    </span>
+                                </a>
+                                <figcaption><strong>iPad · Landscape</strong>Preview your border and caption with the editing controls alongside.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </article>
+            </li>
+
             <li class="entry">
                 <article class="detail">
                     <div class="container">
