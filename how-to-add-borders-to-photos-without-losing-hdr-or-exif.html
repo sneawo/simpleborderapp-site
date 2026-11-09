@@ -423,7 +423,7 @@
       "mainEntityOfPage": "https://simpleborder.app/how-to-add-borders-to-photos-without-losing-hdr-or-exif.html",
       "image": "https://simpleborder.app/i/examples/hdr-iphone-13-preview.jpg",
       "datePublished": "2026-10-14",
-      "dateModified": "2026-10-19",
+      "dateModified": "2026-11-09",
       "author": {
         "@type": "Organization",
         "name": "Simple Border",
@@ -468,7 +468,7 @@
         {
           "@type": "HowToStep",
           "name": "Save and check the export",
-          "text": "Save the bordered photo and compare it with the original. Inspect camera details and location in Photos, then compare highlights in an HDR-capable viewer on the same display. Check the file received by the destination app as well.",
+          "text": "Save the bordered photo and read the save or export message for any SDR recovery notice. Compare it with the original. Inspect camera details and location in Photos, then compare highlights in an HDR-capable viewer on the same display. Check the file received by the destination app as well.",
           "url": "https://simpleborder.app/how-to-add-borders-to-photos-without-losing-hdr-or-exif.html#step-4"
         }
       ]
@@ -499,6 +499,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Check that the source is HDR, HDR is enabled in Simple Border, and Always save as SDR is off. Compare the original and export on the same display in the same viewing app. A receiving app may show an SDR rendition."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does Simple Border say my photo was saved in SDR?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simple Border 8.8.0 retries in SDR if an HDR export fails. When recovery succeeds, the app reports that the affected items were saved or exported in SDR. Those copies are SDR even if HDR was selected initially. Keep the original HDR photo and check the saved copy before sharing. The recovery message alone does not identify why the HDR attempt failed."
           }
         },
         {
@@ -547,7 +555,7 @@
             <article>
                 <h1 class="page-title">How to add borders to photos without losing HDR or EXIF data</h1>
                 <p class="subtitle">Keep bright highlights, retain camera details, and check the photo you actually save.</p>
-                <p class="article-meta">Written by Simple Border's developer. Updated <time datetime="2026-10-19">October 19, 2026</time>.
+                <p class="article-meta">Written by Simple Border's developer. Updated <time datetime="2026-11-09">November 9, 2026</time>.
                     HDR workflow: iOS and macOS.</p>
                 <section class="intro" aria-label="Quick answer">
                     <p class="quick-answer"><strong>Quick answer:</strong> Open a supported HDR photo in Simple Border
@@ -578,7 +586,7 @@
                     <li id="step-1"><strong>Start with the original photo.</strong> Choose a source that already contains the HDR information and camera details you want to keep. In Photos, open the original and swipe up or tap Info to check its camera information and location.</li>
                     <li id="step-2"><strong>Choose the frame.</strong> Open the photo in Simple Border. Choose Original for a frame around the existing shape, or select a target ratio such as square or 4:5. Set the border color and width.</li>
                     <li id="step-3"><strong>Keep HDR enabled.</strong> For a supported HDR photo, leave HDR enabled in the editor. If you prefer photos without HDR, you can turn it off by enabling Always save as SDR in Settings or tapping the HDR pill in the editor.</li>
-                    <li id="step-4"><strong>Save and check the export.</strong> Save the bordered photo and compare it with the original. Inspect camera details and location in Photos, then compare highlights in an HDR-capable viewer on the same display. Check the file received by the destination app as well.</li>
+                    <li id="step-4"><strong>Save and check the export.</strong> Save the bordered photo and read the save or export message for any SDR recovery notice. Compare it with the original. Inspect camera details and location in Photos, then compare highlights in an HDR-capable viewer on the same display. Check the file received by the destination app as well.</li>
                     </ol>
                     <p>On Mac, the same HDR/SDR choice applies. Use Photos' Info window to compare the source and saved
                         photo. For a fuller introduction to choosing ratios and colors, see the <a
@@ -688,6 +696,8 @@
                         recorded location that was never there. A caption or a manually edited library date is also
                         different from embedded camera metadata.</p>
                     <h3>Check HDR on the same display</h3>
+                    <p>Read the app's save or export message first. An <a href="#hdr-sdr-recovery">SDR recovery
+                            notice</a> means the affected copy was exported in SDR, even if HDR was selected.</p>
                     <p>Compare the original and export in an HDR-capable viewer on the same display, with the same
                         viewing conditions. If the bordered copy looks flat, first check the HDR choice in Simple
                         Border and the <strong>Always save as SDR</strong> setting. Then check whether the viewing app
@@ -716,6 +726,11 @@
                     <p>Check that the source is HDR, HDR is enabled in Simple Border, and Always save as SDR is off. Compare the original and export on the same display in the same viewing app. A receiving app may show an SDR rendition.</p>
                 </div>
                 <div class="faq-item">
+                    <h3 id="hdr-sdr-recovery">Why does Simple Border say my photo was saved in SDR?</h3>
+                    <p>Simple Border 8.8.0 retries in SDR if an HDR export fails. When recovery succeeds, the app reports that the affected items were saved or exported in SDR. Those copies are SDR even if HDR was selected initially. Keep the original HDR photo and check the saved copy before sharing. The recovery message alone does not identify why the HDR attempt failed.</p>
+                    <p>See the <a href="changelog.html#release-8-8-0">8.8.0 release notes</a> for the SDR retry behavior.</p>
+                </div>
+                <div class="faq-item">
                     <h3 id="hdr-browser-faq">Why can HDR show in Instagram but look flat in a browser preview?</h3>
                     <p>Two pages can display different renditions of the same photo. HDR appearance also depends on the image format, browser, and display; an SDR screen cannot show the extra brightness of HDR highlights. This guide uses a resized HDR preview and offers the unchanged app export separately. If the preview looks flat, download the full-size JPEG and open it in Photos on the same HDR-capable display. If HDR appears there, a flat browser preview alone does not establish that the export lost HDR.</p>
                     <p><a href="https://webkit.org/blog/17333/webkit-features-in-safari-26-0/" target="_blank" rel="noopener">WebKit explains HDR image support and rendering controls in Safari</a>.</p>
@@ -732,6 +747,7 @@
                     <h2 id="sources">Sources and related guides</h2>
                     <ul>
                         <li><a href="changelog.html#release-8-7-0">Simple Border 8.7.0 release notes</a>: HDR export controls on iOS and macOS.</li>
+                        <li><a href="changelog.html#release-8-8-0">Simple Border 8.8.0 release notes</a>: SDR retry and notification after a failed HDR export.</li>
                         <li><a href="best-white-border-app.html#methodology">Our photo export comparison</a>: the recorded metadata and resolution example.</li>
                         <li><a href="https://support.apple.com/guide/iphone/iph0edb9c18f/ios" target="_blank" rel="noopener">Apple: see photo and video information on iPhone</a>.</li>
                         <li><a href="https://support.apple.com/guide/personal-safety/ips0d7a5df82/web" target="_blank" rel="noopener">Apple: manage location metadata in Photos</a>.</li>
