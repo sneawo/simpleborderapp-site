@@ -37,3 +37,13 @@ The HDR AVIF was encoded from the codec's linear half-float HDR decode, unpacked
 `i/examples/hdr-iphone-13-export.jpg` is the unchanged, full-size file supplied by the app developer on October 14, 2026: 3395 × 4244 pixels, 6,189,558 bytes. Its SHA-256 is `236698782968a30ba1768d556bcc11e91411cf1782ad6555da9a5b02b34ad3e9`. It retains the source metadata, including location and the embedded HDR gain map. It is linked with a `download` attribute and the `hdr-export-download` Umami event; it is not an inline image or preloaded resource. The page recommends opening the downloaded JPEG in Photos or another HDR-capable viewer, since browser rendering can show SDR.
 
 The developer reported seeing HDR on a MacBook screen and an iPhone. The exact display models, viewer versions, and app build were not recorded. This is a single exported file with a visual check, not a controlled before/after HDR preservation test. The August Sony metadata measurements are a separate example.
+
+## Android photo border guide
+
+`how-to-add-borders-to-photos-on-android.html` uses real Android editor captures from the existing Google Play graphics source set. The originals remain under `/Users/azl/Projects/android/SimpleBorder/store-listing/next-release/graphics/sources/native-captures/phone/`: `02_4x5_border_8.png` and `03_square_border_8_color_panel.png` (1080 × 2400 each). Their exact app build, device and OS version were not recorded alongside those captures; do not describe them as a new 2.1.0 device test or an export-quality comparison.
+
+The two site assets, `i/how-to/android-border-editor.webp` and `i/how-to/android-border-color-picker.webp`, are full-frame 720 × 1600 WebP copies encoded with `cwebp -q 90 -m 6 -resize 720 1600`. No UI or photo content was retouched. They total 284,262 bytes, display at up to 360 CSS pixels wide, and link to the larger images. A thin CSS frame surrounds each capture; native source files are preserved separately.
+
+The instructions were checked against Android 2.1.0 source (`c95f282`): `AspectRatio.kt`, `EditorChrome.kt`, `EditorSettings.kt`, `strings.xml`, the JPEG exporter, `MediaIO.kt`, and `OutputAlbum.kt`. The save-location explanation also links to the Android 2.1.0 changelog. This was a source review, not a new device or export test. Save writes to the device media library; Share stages a temporary copy. Old exports are not migrated.
+
+The Android guide uses Google Play download links with `google-play-download` events and distinct `android-guide-*` locations. It has no direct App Store button and needs no new Apple campaign token. The iPhone and Android guides link to one another with a platform switcher; the homepage guide card and contextual black-border link also lead to Android.

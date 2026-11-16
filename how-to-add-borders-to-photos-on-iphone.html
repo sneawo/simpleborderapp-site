@@ -321,6 +321,31 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .platform-switch {
+            display: inline-flex;
+            gap: 4px;
+            margin: 16px 0 4px;
+            padding: 4px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #111;
+        }
+        .platform-switch a {
+            padding: 9px 14px;
+            border-radius: 8px;
+            color: var(--muted);
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .platform-switch a[aria-current="page"] {
+            background: var(--accent);
+            color: #041a08;
+        }
+        .platform-switch a:focus-visible {
+            outline: 2px solid var(--fg);
+            outline-offset: 3px;
+        }
     </style>
     <script defer src="https://cloud.umami.is/script.js"
         data-website-id="73f82c83-e126-42bf-9759-c0b78d84a706"></script>
@@ -395,6 +420,10 @@
         </header>
 
         <main>
+            <nav class="platform-switch" aria-label="Photo border guide platform">
+                <a href="how-to-add-borders-to-photos-on-iphone.html" aria-current="page">iPhone &amp; iPad</a>
+                <a href="how-to-add-borders-to-photos-on-android.html">Android</a>
+            </nav>
             <h1 class="page-title">How to add borders to photos on iPhone</h1>
             <p class="subtitle">Add a white, black, or colored frame while keeping the whole photo visible.</p>
 

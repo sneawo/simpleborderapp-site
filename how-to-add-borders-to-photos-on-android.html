@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to Add Borders to Photos on Android (Without Cropping) – Simple Border</title>
+    <meta name="description" content="Add white, black, or colored borders to Android photos without cropping. Follow real app screenshots, save or share your photo, and find your exported files.">
+    <link rel="icon" href="i/favicon.png" sizes="32x32" type="image/png">
+    <link rel="canonical" href="https://simpleborder.app/how-to-add-borders-to-photos-on-android.html">
+    <meta property="og:title" content="How to Add Borders to Photos on Android (Without Cropping)">
+    <meta property="og:description" content="Follow the Android editor step by step: choose a frame, adjust the width and color, then save or share. Includes help finding saved exports.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://simpleborder.app/how-to-add-borders-to-photos-on-android.html">
+    <meta property="og:image" content="https://simpleborder.app/i/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+        :root {
+            --bg: #0b0b0c;
+            --fg: #f5f5f7;
+            --muted: #b7b7bd;
+            --accent: #7ee787;
+            --card: #151517;
+            --border: #26262a;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+            color: var(--fg);
+            background: radial-gradient(1000px 600px at 80% -10%, #1b1b1f 10%, #0b0b0c 60%);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--fg);
+            text-decoration: none;
+        }
+
+        .wrap {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            padding: 12px 0 8px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: #000;
+            position: relative;
+            display: grid;
+            place-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .35), inset 0 0 0 1px #333;
+        }
+
+        .logo::after {
+            content: "";
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            background: #fff;
+            display: block;
+        }
+
+        .brand-title {
+            font-size: 22px;
+            margin: 0;
+            letter-spacing: .2px;
+            font-weight: 700;
+        }
+
+        .page-title {
+            margin: 28px 0 8px;
+            font-size: clamp(24px, 5vw, 40px);
+            letter-spacing: -.4px;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 20px;
+            font-size: 16px;
+        }
+
+        .intro {
+            margin-bottom: 28px;
+        }
+
+        .intro p {
+            margin: 0 0 12px;
+            color: var(--muted);
+        }
+
+        .intro .quick-answer {
+            padding: 18px;
+            border-left: 3px solid var(--accent);
+            border-radius: 0 12px 12px 0;
+            background: rgba(126, 231, 135, .07);
+            color: var(--fg);
+        }
+
+        .intro a {
+            color: var(--accent);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .store-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .header-store {
+            justify-content: flex-end;
+        }
+
+        .store-badge {
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            transition: transform .15s ease, opacity .15s ease;
+        }
+
+        .store-badge:hover {
+            transform: translateY(-2px);
+            opacity: .92;
+        }
+
+        .store-badge:focus-visible {
+            outline: 2px solid #f5f5f7;
+            outline-offset: 3px;
+            border-radius: 8px;
+        }
+
+        .store-badge img {
+            display: block;
+            width: auto;
+            height: 40px;
+        }
+
+        .intro-store .store-badge img {
+            height: 44px;
+        }
+
+        .section {
+            margin: 30px 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 18px 18px 20px;
+        }
+
+        .section h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+
+        .section h3 {
+            margin: 18px 0 8px;
+            font-size: 17px;
+        }
+
+        .section p {
+            margin: 0 0 10px;
+            color: var(--fg);
+        }
+
+        .section a {
+            color: var(--accent);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .section a:hover {
+            color: #a7f3ad;
+        }
+
+        .section ul,
+        .section ol {
+            margin: 0 0 10px 20px;
+            padding: 0;
+            color: var(--fg);
+        }
+
+        .section li {
+            margin: 4px 0;
+        }
+
+        .section small {
+            color: var(--muted);
+        }
+
+        .faq {
+            margin-top: 24px;
+        }
+
+        .faq-item+.faq-item {
+            margin-top: 14px;
+        }
+
+        .faq-item h3 {
+            margin: 0 0 4px;
+            font-size: 16px;
+        }
+
+        .faq-item p {
+            margin: 0;
+        }
+
+        footer {
+            color: var(--muted);
+            font-size: 14px;
+            margin: 40px 0 16px;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 640px) {
+            .wrap {
+                padding: 20px;
+            }
+        }
+
+        .platform-switch {
+            display: inline-flex;
+            gap: 4px;
+            margin: 16px 0 4px;
+            padding: 4px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #111;
+        }
+        .platform-switch a {
+            padding: 9px 14px;
+            border-radius: 8px;
+            color: var(--muted);
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .platform-switch a[aria-current="page"] {
+            background: var(--accent);
+            color: #041a08;
+        }
+        .platform-switch a:focus-visible {
+            outline: 2px solid var(--fg);
+            outline-offset: 3px;
+        }
+
+        a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+        [id] { scroll-margin-top: 24px; }
+        .intro { max-width: 74ch; }
+        .updated { margin: 0 0 18px; color: var(--muted); font-size: 14px; }
+        .guide-nav { display: flex; flex-wrap: wrap; gap: 10px 24px; margin: 24px 0 32px; }
+        .guide-nav a { text-decoration: underline; text-underline-offset: 4px; }
+        .walkthrough { margin: 40px 0; }
+        .step-row { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 40px; align-items: center; padding: 36px 0; border-top: 1px solid var(--border); }
+        .step-copy { max-width: 52ch; }
+        .step-copy h2 { font-size: 24px; line-height: 1.3; margin: 0 0 18px; }
+        .step-copy h3 { font-size: 19px; margin: 30px 0 8px; }
+        .step-copy p { margin: 0 0 16px; }
+        .step-copy a, .save-section a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+        .step-copy dl { margin: 24px 0; }
+        .step-copy dt { font-weight: 700; margin-top: 14px; }
+        .step-copy dd { color: var(--muted); margin: 2px 0 0; }
+        .screen-figure { margin: 0; width: 100%; }
+        .screen-link { display: block; width: min(100%, 360px); margin: 0 auto; padding: 5px; border: 1px solid #58585e; border-radius: 30px; background: #252528; }
+        .screen-link img { display: block; width: 100%; height: auto; border-radius: 24px; }
+        .screen-figure figcaption { max-width: 360px; margin: 14px auto 0; color: var(--muted); font-size: 14px; text-align: center; }
+        .screen-figure figcaption a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+        .save-section { max-width: 72ch; padding: 28px 0; border-top: 1px solid var(--border); }
+        .save-section h2 { font-size: 24px; margin: 0 0 12px; }
+        .faq-item + .faq-item { margin-top: 28px; }
+        .faq-item p { max-width: 78ch; }
+        .faq-item .release-link { margin-top: 10px; }
+        .section { padding: 24px; }
+        @media (max-width: 760px) {
+            .step-row { grid-template-columns: 1fr; gap: 20px; padding: 28px 0; }
+            .step-copy { max-width: none; }
+            .screen-figure { max-width: 380px; margin: 0 auto; }
+        }
+        @media (max-width: 400px) {
+            .wrap { padding: 18px; }
+            .section { padding: 18px; }
+        }
+        @media (prefers-reduced-motion: reduce) { .store-badge { transition: none; } }
+    </style>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="73f82c83-e126-42bf-9759-c0b78d84a706"></script>
+    <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to add borders to photos on Android without cropping",
+    "description": "Choose a photo, set its border shape, width and color, then save or share it with Simple Border on Android.",
+    "url": "https://simpleborder.app/how-to-add-borders-to-photos-on-android.html",
+    "datePublished": "2026-11-16",
+    "dateModified": "2026-11-16",
+    "image": "https://simpleborder.app/i/how-to/android-border-editor.webp",
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "Android phone with Simple Border"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Choose your photo",
+        "text": "Install Simple Border from Google Play and open it. Tap Choose Media, then select your photo in the Android system picker.",
+        "url": "https://simpleborder.app/how-to-add-borders-to-photos-on-android.html#choose-photo"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Choose the frame shape",
+        "text": "Select 1:1 for a square, 4:5 for a portrait canvas, or Original to keep the photo’s aspect ratio. Choose Even when you want the same border thickness on every side.",
+        "url": "https://simpleborder.app/how-to-add-borders-to-photos-on-android.html#choose-format"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Adjust the border width",
+        "text": "Move the slider below the format tiles to adjust the border width. Check the preview to see how much space surrounds your photo.",
+        "url": "https://simpleborder.app/how-to-add-borders-to-photos-on-android.html#border-width"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Choose a border color",
+        "text": "Tap the round color control beside the slider. Choose white, black, a suggested color, or a custom color, then close the panel.",
+        "url": "https://simpleborder.app/how-to-add-borders-to-photos-on-android.html#border-color"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Save or share your photo",
+        "text": "Tap Save, the downward-arrow icon at the bottom right, and wait for Save Complete. Use Share to send a bordered copy to another app.",
+        "url": "https://simpleborder.app/how-to-add-borders-to-photos-on-android.html#save-photo"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where are my saved photos and videos on Android?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Simple Border 2.1.0, new photos and videos are saved together in Pictures/Simple Border on Android 11 and later. On Android 10, look in DCIM/Simple Border. Find the folder in your gallery or file manager. Earlier exports stay in their previous locations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between Save and Share?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Save creates a copy in your device’s media library. Share prepares a temporary bordered copy for another app; opening the sharing menu does not also save a gallery copy. Choose Save if you want to keep the exported file on your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why can’t I see the Save or Share button?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open Settings using the gear icon and check Show Save Button and Show Share Button. You can hide either action, but at least one stays visible."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Simple Border",
+        "item": "https://simpleborder.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Android photo border guide",
+        "item": "https://simpleborder.app/how-to-add-borders-to-photos-on-android.html"
+      }
+    ]
+  }
+]
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <a href="/" aria-label="Go home"><img src="i/icon.png" alt="Simple Border app icon" class="logo"></a>
+                <div class="brand-title"><a href="/">Simple Border</a></div>
+            </div>
+            <nav class="store-links header-store" aria-label="Download Simple Border for Android">
+                <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sneawo.simpleborder"
+                    target="_blank" rel="noopener" data-umami-event="google-play-download"
+                    data-umami-event-location="android-guide-header">
+                    <img src="i/store-badges/google-play.svg" alt="Get it on Google Play" width="135" height="40">
+                </a>
+            </nav>
+        </header>
+        <main>
+            <nav class="platform-switch" aria-label="Photo border guide platform">
+                <a href="how-to-add-borders-to-photos-on-iphone.html">iPhone &amp; iPad</a>
+                <a href="how-to-add-borders-to-photos-on-android.html" aria-current="page">Android</a>
+            </nav>
+            <h1 class="page-title">How to add borders to photos on Android</h1>
+            <p class="subtitle">A white frame, a black border, or a color from your photo. Keep the whole composition.</p>
+            <p class="updated">Updated <time datetime="2026-11-16">November 16, 2026</time></p>
+            <section class="intro" aria-label="Quick answer">
+                <p class="quick-answer">Open a photo in Simple Border, choose the frame shape, then adjust the border
+                    width and color. Tap <strong>Save</strong> to keep a copy on your Android device or
+                    <strong>Share</strong> to send it to another app. The border adds space around your photo without cropping it.</p>
+                <div class="store-links intro-store"><a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sneawo.simpleborder"
+                    target="_blank" rel="noopener" data-umami-event="google-play-download"
+                    data-umami-event-location="android-guide-intro">
+                    <img src="i/store-badges/google-play.svg" alt="Get it on Google Play" width="135" height="40">
+                </a></div>
+            </section>
+            <nav class="guide-nav" aria-label="On this page">
+                <a href="#choose-photo">Choose a photo and format</a>
+                <a href="#border-width">Set width and color</a>
+                <a href="#save-photo">Save or share</a>
+                <a href="#android-saved-exports">Find saved files</a>
+            </nav>
+            <div class="walkthrough">
+                <section class="step-row" aria-labelledby="choose-photo">
+                    <div class="step-copy">
+                        <h2 id="choose-photo">1. Choose your photo</h2>
+                        <p>Install <a href="https://play.google.com/store/apps/details?id=com.sneawo.simpleborder"
+                            target="_blank" rel="noopener" data-umami-event="google-play-download"
+                            data-umami-event-location="android-guide-steps">Simple Border from Google Play</a> and open it.
+                            Tap <strong>Choose Media</strong>, then select your photo in the Android system picker.</p>
+                        <h3 id="choose-format">2. Choose the frame shape</h3>
+                        <p>Use the format tiles below the preview. The photo fits inside the new canvas; the extra space becomes the border.</p>
+                        <dl>
+                            <dt>1:1 or 4:5</dt><dd>A square or portrait canvas, respectively. The screenshot shows 4:5.</dd>
+                            <dt>Original</dt><dd>Keep the photo’s aspect ratio as you add the frame.</dd>
+                            <dt>Even</dt><dd>Use the same border thickness on every side. The final aspect ratio can change.</dd>
+                        </dl>
+                        <p>You can scroll the format row to see more choices. Use the preview to check the full composition before moving on.</p>
+                    </div>
+                    <figure class="screen-figure">
+                        <a class="screen-link" href="i/how-to/android-border-editor.webp" target="_blank" rel="noopener" aria-label="Open larger screenshot: Simple Border Android editor with a coastal photo, a white border, 4:5 selected, and the width slider set to 8">
+                            <img src="i/how-to/android-border-editor.webp" width="720" height="1600" loading="lazy" decoding="async" alt="Simple Border Android editor with a coastal photo, a white border, 4:5 selected, and the width slider set to 8">
+                        </a>
+                        <figcaption>Android editor with 4:5 selected and a white border. <a href="i/how-to/android-border-editor.webp" target="_blank" rel="noopener">View larger screenshot</a>.</figcaption>
+                    </figure>
+                </section>
+                <section class="step-row" aria-labelledby="border-width">
+                    <div class="step-copy">
+                        <h2 id="border-width">3. Adjust the border width</h2>
+                        <p>Move the slider below the format tiles to make the border narrower or wider. Watch the preview as you adjust it.</p>
+                        <p>A fixed shape such as 1:1 or 4:5 can leave more space on two sides when your photo has a different shape. Choose <strong>Even</strong> if equal thickness on all four sides matters more than the final ratio.</p>
+                        <h3 id="border-color">4. Choose a border color</h3>
+                        <p>Tap the round color control beside the slider. Pick white, black, a suggested color, or use the color picker for a custom shade.</p>
+                        <p>Close the panel when you’re happy with the result. For a dark frame or bars, see the <a href="how-to-add-black-borders-to-photos.html">black-border guide</a>.</p>
+                    </div>
+                    <figure class="screen-figure">
+                        <a class="screen-link" href="i/how-to/android-border-color-picker.webp" target="_blank" rel="noopener" aria-label="Open larger screenshot: Android border color panel with a cat photo, a warm gray frame, saved colors and suggested swatches">
+                            <img src="i/how-to/android-border-color-picker.webp" width="720" height="1600" loading="lazy" decoding="async" alt="Android border color panel with a cat photo, a warm gray frame, saved colors and suggested swatches">
+                        </a>
+                        <figcaption>Choose a suggested color or make your own in the Android color panel. <a href="i/how-to/android-border-color-picker.webp" target="_blank" rel="noopener">View larger screenshot</a>.</figcaption>
+                    </figure>
+                </section>
+                <section class="save-section" aria-labelledby="save-photo">
+                    <h2 id="save-photo">5. Save or share your photo</h2>
+                    <p>Tap <strong>Save</strong>, the downward-arrow icon at the bottom right, and wait for <strong>Save Complete</strong>.
+                        Open the saved file in your gallery and check it before posting.</p>
+                    <p>Use <strong>Share</strong>, the connected-dots icon beside Save, to send a bordered copy to another app.
+                        If you also want a gallery copy, use Save. <a href="#android-saved-exports">Find the export folder below</a>.</p>
+                    <p>Keeping the full composition does not mean the file is lossless. Android photo exports are JPEGs;
+                        inspect the saved image at full size if fine detail matters.</p>
+                </section>
+            </div>
+            <section class="section faq" aria-labelledby="export-help">
+                <h2 id="export-help">Finding and keeping your exports</h2>
+                <div class="faq-item">
+                    <h3 id="android-saved-exports">Where are my saved photos and videos on Android?</h3>
+                    <p>In Simple Border 2.1.0, new photos and videos are saved together in Pictures/Simple Border on Android 11 and later. On Android 10, look in DCIM/Simple Border. Find the folder in your gallery or file manager. Earlier exports stay in their previous locations.</p>
+                    <p class="release-link"><a href="changelog-android.html#release-2-1-0">What changed in Android 2.1.0</a>.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 id="save-or-share">What is the difference between Save and Share?</h3>
+                    <p>Save creates a copy in your device’s media library. Share prepares a temporary bordered copy for another app; opening the sharing menu does not also save a gallery copy. Choose Save if you want to keep the exported file on your device.</p>
+
+                </div>
+                <div class="faq-item">
+                    <h3 id="missing-save">Why can’t I see the Save or Share button?</h3>
+                    <p>Open Settings using the gear icon and check Show Save Button and Show Share Button. You can hide either action, but at least one stays visible.</p>
+
+                </div>
+            </section>
+            <section class="section" aria-labelledby="related-guides">
+                <h2 id="related-guides">Choose a style for your next photo</h2>
+                <p>For a focused dark-frame workflow, read <a href="how-to-add-black-borders-to-photos.html">how to add black borders or black bars</a>.
+                    To choose a canvas for a post, see the <a href="how-to-format-images-for-instagram-without-cropping.html">Instagram format guide</a>.</p>
+                <div class="store-links intro-store"><a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sneawo.simpleborder"
+                    target="_blank" rel="noopener" data-umami-event="google-play-download"
+                    data-umami-event-location="android-guide-bottom">
+                    <img src="i/store-badges/google-play.svg" alt="Get it on Google Play" width="135" height="40">
+                </a></div>
+            </section>
+        </main>
+        <footer>
+            <div>© <span id="year"></span> Simple Border · All rights reserved.</div>
+            <div>
+                <a href="/">Home</a> ·
+                <a href="how-to-format-images-for-instagram-without-cropping.html">Instagram format guide</a> ·
+                <a href="how-to-add-black-borders-to-photos.html">Black border guide</a> ·
+                <a href="how-to-prepare-instagram-carousel-photos-on-iphone.html">Instagram carousel guide</a> ·
+                <a href="best-white-border-app.html">Best white border app</a> ·
+                <a href="changelog-android.html">Changelog</a> ·
+                <a href="how-to-add-borders-to-photos-without-losing-hdr-or-exif.html">HDR &amp; metadata guide</a> ·
+                <a href="mailto:support+simpleborder@sneawo.com">Support</a> ·
+                <a href="https://sneawo.com/privacy-policy.html" target="_blank" rel="noopener">Privacy</a> ·
+                <a href="https://sneawo.com/terms.html" target="_blank" rel="noopener">Terms</a>
+            </div>
+        </footer>
+    </div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
